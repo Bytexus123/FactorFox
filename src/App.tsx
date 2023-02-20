@@ -1,14 +1,33 @@
-import React from 'react'
-import LoginPage from './components/login-page'
-import PerformanceModel from './components/performance-model'
+import React, { useState } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { ForgotPassword, LoginPage } from "./components/login-page";
+import DashboardModel from "./components/dashboard";
 
 const App = () => {
-  return (
-    <div>
-      <PerformanceModel />
-      <LoginPage/>
-    </div>
-  )
-}
+  const [loggedIn, setloggedIn] = useState(false);
 
-export default App
+  const callback = (childData: any) => {
+    setloggedIn(childData);
+  };
+  return (
+    <div className="main-content">
+      <Switch>
+        <Route path="/dashboard">
+          {loggedIn ? <DashboardModel /> : <Redirect to="/" />}
+        </Route>
+        <Route exact path="/">
+          {loggedIn ? (
+            <Redirect to="/Dashboard" />
+          ) : (
+            <LoginPage Callback={callback} />
+          )}
+        </Route>
+        <Route path="/forget-password">
+          <ForgotPassword />
+        </Route>
+      </Switch>
+    </div>
+  );
+};
+
+export default App;

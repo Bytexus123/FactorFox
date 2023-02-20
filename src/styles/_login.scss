@@ -1,0 +1,57 @@
+.app-logo-login img {
+    height: 40px;
+}
+
+.app-theme-white.app-container {
+    background: #f1f4f6;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+
+#loginpage .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.input-group-prepend .input-group-text {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+@media (min-width: 576px) {
+    #loginpage .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+}
+
+.bg-ultimate {
+    // background-image: linear-gradient(299deg, #9acdff 0%, #c4f5fa 99%, #c4e2fa 100%) !important;
+    background-image: url('../../public/images/ffbackground.jpg');
+    background-size: cover;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary-rgb) !important;
+}
+
+.input-group-text{
+   min-width: 100px;  
+}

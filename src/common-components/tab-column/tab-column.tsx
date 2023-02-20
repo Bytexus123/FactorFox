@@ -3,7 +3,7 @@ import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 
 interface TabColumnProps {
   tabTitles: any;
-  children: any;
+  children?: any[] | JSX.Element | JSX.Element[];
 }
 
 const TabColumn = ({ tabTitles, children }: TabColumnProps) => {

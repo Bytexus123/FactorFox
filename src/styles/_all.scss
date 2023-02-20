@@ -1,0 +1,51 @@
+@import "./header";
+@import "./navigation";
+@import './login';
+
+:root {
+  --bs-primary-rgb: #21529d !important;
+  --bs-card-border-radius: 0 !important;
+  --bs-link-color: var(--bs-primary-rgb) !important;
+  --bs-link-hover-color: #900b0f !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.btn {
+  &:active {
+    border-color: transparent !important;
+  }
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+@media only screen and (min-width:767.98px) {
+  .row {
+      --bs-gutter-y: 0.5rem;
+  }
+}
+
+@media (min-width:1200px) {
+
+  .col-lg-4:not(:first-child):not(:last-child),
+  .col-xl-4:not(:first-child):not(:last-child) {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-section {
+      padding: 0;
+  }
+}

@@ -1,0 +1,21 @@
+$nav-highlight-color: #2c7be5;
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  height: 68px;
+  border-bottom: 1px solid #edf2f9;
+  background-color: #fff;
+  width: 100%;
+  z-index: 2;
+}
+.user-dropdown-greeting{
+  display: flex;
+  align-items: center;
+  i{
+    padding-right: 10px;
+    font-size: xx-large;
+  }
+}
