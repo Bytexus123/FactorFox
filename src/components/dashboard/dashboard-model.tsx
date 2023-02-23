@@ -1,47 +1,19 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col, TabPane, Table } from "reactstrap";
+import { Container, Row, Col, Table } from "reactstrap";
 import CoulmnSection from "../../common-components/coulmn-section";
 import RowSection from "../../common-components/row-section";
 import TabColumn from "../../common-components/tab-column";
 import NewSchedules from "../new-schedules/new-schedules";
-import { useTranslation } from "react-i18next";
 import PieChart from "../pie-chart";
 import Header from "../header";
 import NaviagtionModel from "../navigation/navigation-model";
-import DashboardChart from "../dashboard-section/dashboard-chart";
+import DashboardChart from "../graphs/graph-chart";
 
 interface DashboardModelProps {
   element?: HTMLElement;
 }
 
-const DashboardModel = ({ }: DashboardModelProps) => {
-  const chartData = {
-    labels: ["0-30", "31-60", "61-90", "90+"],
-    datasets: [
-      {
-        label: "Advances %",
-        data: [0.76, 3.25, 0.17, 95.82],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
-  const { t } = useTranslation();
+const DashboardModel = ({}: DashboardModelProps) => {
   const setCardHeight = () => {
     const rs = document.querySelectorAll<HTMLElement>(".section");
     rs.forEach((r) => {
@@ -74,9 +46,7 @@ const DashboardModel = ({ }: DashboardModelProps) => {
                         <tr>
                           <th className="text-left"></th>
                           <th className="text-left"></th>
-                          <th className="text-right ng-binding">
-                            {t("performance.count")}
-                          </th>
+                          <th className="text-right ng-binding">Count</th>
 
                           <th className="text-right ng-binding">Advance Due</th>
                           <th className="text-right">%</th>
@@ -183,11 +153,7 @@ const DashboardModel = ({ }: DashboardModelProps) => {
                         </tr>
 
                         <tr>
-                          <td
-                            // colSpan="8"
-                            ng-if="ARList.length > 0"
-                            className="ng-scope"
-                          >
+                          <td ng-if="ARList.length > 0" className="ng-scope">
                             <a
                               href="#"
                               ng-click="ShowMoreArInvoice()"
@@ -316,11 +282,7 @@ const DashboardModel = ({ }: DashboardModelProps) => {
                         </tr>
 
                         <tr>
-                          <td
-                            // colSpan="8"
-                            ng-if="ARList.length > 0"
-                            className="ng-scope"
-                          >
+                          <td ng-if="ARList.length > 0" className="ng-scope">
                             <a
                               href="#"
                               ng-click="ShowMoreArInvoice()"
@@ -338,9 +300,7 @@ const DashboardModel = ({ }: DashboardModelProps) => {
             </CoulmnSection>
           </Col>
           <Col xl={4} md={6}>
-            <PieChart
-              chartData={chartData}
-            />
+            <PieChart title="Aging Summary" />
           </Col>
           <Col xl={4} md={6}>
             <CoulmnSection>

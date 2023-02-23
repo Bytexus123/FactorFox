@@ -13,7 +13,8 @@ const App = () => {
     <div className="main-content">
       <Switch>
         <Route path="/dashboard">
-          {loggedIn ? <DashboardModel /> : <Redirect to="/" />}
+          {/* {loggedIn ? <DashboardModel /> : <Redirect to="/" />} */}
+          <DashboardModel />
         </Route>
         <Route exact path="/">
           {loggedIn ? (
@@ -22,7 +23,7 @@ const App = () => {
             <LoginPage Callback={callback} />
           )}
         </Route>
-        <Route path="/forget-password">
+        <Route path="/forgetpassword">
           <ForgotPassword />
         </Route>
       </Switch>

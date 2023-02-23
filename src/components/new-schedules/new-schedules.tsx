@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Container, Row, Col, TabPane, Table } from "reactstrap";
 import CoulmnSection from "../../common-components/coulmn-section";
 import RowSection from "../../common-components/row-section";
@@ -7,7 +7,7 @@ import TabColumn from "../../common-components/tab-column";
 const NewSchedules = () => {
   return (
     <>
-        <Container  fluid className="pt-3">
+      <Container fluid className="pt-3">
         <RowSection headerName="New Schedules">
           <Col xl={4} md={6}>
             <CoulmnSection title="Recent Entries">
@@ -240,9 +240,9 @@ const NewSchedules = () => {
             </CoulmnSection>
           </Col>
         </RowSection>
-        </Container>
+      </Container>
     </>
-  )
-}
+  );
+};
 
-export default NewSchedules
+export default NewSchedules;

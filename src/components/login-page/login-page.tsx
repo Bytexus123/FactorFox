@@ -1,7 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Form, FormGroup, Input } from "reactstrap";
-import { Redirect } from "react-router-dom";
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  FormGroup,
+  Input,
+  InputGroup,
+  InputGroupText,
+  Label,
+  Row,
+} from "reactstrap";
+import CompanyLogo from "../../common-components/company-logo";
+import validateInfo from "../../validation/validation";
 
 interface LoginPageProps {
   email?: string;
@@ -12,51 +24,53 @@ interface LoginPageProps {
 const LoginPage = ({ Callback }: LoginPageProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [error, setError] = useState({})
 
   const login = () => {
-    setLoggedIn(true);
     Callback(true);
+    // setError(validateInfo(values))
   };
 
   return (
     <>
-      <div className="app-container" id="loginpage">
-        <div className="h-100 bg-ultimate bg-animation">
-          <div className="d-flex h-100vh justify-content-center align-items-center">
-            <div className="mx-auto app-login-box col-md-8">
-              <div className="app-logo-login mx-auto mb-3">
-                <img
-                  className="d-block mx-auto"
-                  src="./images/factorfox.png"
-                  alt="logo"
-                  height={60}
-                />
-              </div>
-              <div className="modal-dialog w-100 mx-auto">
-                <div className="modal-content p-2">
-                  {loggedIn && <Redirect to="/default" />}
-                  <div className="modal-body mx-3 px-sm-3">
-                    <div className="h5 modal-title text-center mb-3">
-                      <h4 className="mt-4">Welcome</h4>
-                      <label className="text-secondary small">
-                        Please sign in to your account below.
-                      </label>
+      <div className="login">
+        <Container>
+          <Row>
+            <Col
+              xl={5}
+              lg={6}
+              md={8}
+              sm={12}
+              className="vh-100 mx-auto d-flex align-items-center"
+            >
+              <Container className="login-form py-4 shadow rounded">
+                <Row>
+                  <Col className="border-bottom">
+                    <div className="logo-section text-center my-3 ">
+                      <CompanyLogo height={40} />
                     </div>
-                    <Form className="py-4">
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col sm={10} className="mx-auto">
+                    <div className="text-center my-4">
+                      <h3 className="fw-bold">Welcome</h3>
+                      <p className="small text-black-50 fw-semibold ">
+                        Please Sign In to your Account
+                      </p>
+                    </div>
+
+                    <Form className="mt-5">
                       <FormGroup>
-                        <label
-                          className="pb-1  d-block d-md-none"
-                          htmlFor="email"
-                        >
-                          Email Address
-                        </label>
-                        <div className="input-group">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text fixedWidth d-none d-md-block">
-                              Username
-                            </span>
-                          </div>
+                        <Label for="email" className="d-block d-sm-none">
+                          Username
+                        </Label>
+                        <InputGroup>
+                          <InputGroupText className="d-none d-sm-inline">
+                            <i className="bi bi-person-fill pe-2 "></i>
+                            Username
+                          </InputGroupText>
                           <Input
                             type="email"
                             name="email"
@@ -65,22 +79,17 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                             placeholder={`${"Enter email Address "}`}
                             required
                           />
-                        </div>
+                        </InputGroup>
                       </FormGroup>
-
-                      <FormGroup>
-                        <label
-                          className="pb-1  d-block d-md-none"
-                          htmlFor="password"
-                        >
+                      <FormGroup className="text-end">
+                        <Label for="password" className="d-block d-sm-none">
                           Password
-                        </label>
-                        <div className="input-group">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text fixedWidth d-none d-md-block ">
-                              Password
-                            </span>
-                          </div>
+                        </Label>
+                        <InputGroup>
+                          <InputGroupText className="d-none d-sm-inline">
+                            <i className="bi bi-key-fill pe-2 "></i>
+                            Password&nbsp;
+                          </InputGroupText>
                           <Input
                             type="password"
                             name="password"
@@ -89,17 +98,15 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                             placeholder={`${"Enter Password "}`}
                             required
                           />
-                        </div>
-                      </FormGroup>
-
-                      <div className="mt-4 d-flex justify-content-end">
+                        </InputGroup>
                         <Link
-                          className="pe-3"
-                          color="link"
-                          to="/forget-password"
+                          to={"/forgetpassword"}
+                          className="px-0 btn btn-link"
                         >
-                          Forgot Password ?
+                          Forgot Password?
                         </Link>
+                      </FormGroup>
+                      <FormGroup className="text-center">
                         <Button
                           color="primary"
                           className="px-5"
@@ -107,15 +114,14 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                         >
                           Login
                         </Button>
-                      </div>
+                      </FormGroup>
                     </Form>
-                    <div className="divider"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

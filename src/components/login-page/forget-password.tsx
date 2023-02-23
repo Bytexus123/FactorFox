@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Form, FormGroup, Input } from "reactstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  FormGroup,
+  Input,
+  InputGroup,
+  Label,
+  Row,
+} from "reactstrap";
+import CompanyLogo from "../../common-components/company-logo";
 
 interface LoginPageProps {
   email?: string;
@@ -15,66 +26,64 @@ const ForgotPassword = () => {
 
   return (
     <>
-      <div className="app-container" id="loginpage">
-        <div className="h-100 bg-ultimate bg-animation">
-          <div className="d-flex h-100vh justify-content-center align-items-center">
-            <div className="mx-auto app-login-box col-md-8">
-              <div className="app-logo-login mx-auto mb-3">
-                <img
-                  className="d-block mx-auto"
-                  src="./images/factorfox.png"
-                  alt="logo"
-                  height={60}
-                />
-              </div>
-              <div className="modal-dialog w-100 mx-auto">
-                <div className="modal-content p-2">
-                  <div className="modal-body mx-3 px-sm-3">
-                    <div className="h5 modal-title text-center mb-3">
-                      <h4 className="mt-4"> Reset Your Password </h4>
-                      <label className="text-secondary small fs-6">
-                        We’ll email you instructions to reset your password.
-                      </label>
+      <div className="login">
+        <Container>
+          <Row>
+            <Col
+              xl={5}
+              lg={6}
+              md={8}
+              sm={12}
+              className="vh-100 mx-auto d-flex align-items-center"
+            >
+              <Container className="login-form py-4 shadow rounded">
+                <Row>
+                  <Col className="border-bottom">
+                    <div className="logo-section text-center my-3 ">
+                      <CompanyLogo height={40} />
                     </div>
-                    <Form className="py-4">
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col sm={10} className="mx-auto">
+                    <div className="text-center my-4">
+                      <h3 className="fw-bold">Welcome</h3>
+                      <p className="small text-black-50 fw-semibold ">
+                        Enter your Email to Reset the Password
+                      </p>
+                    </div>
+
+                    <Form className="mt-5">
                       <FormGroup>
-                        <label
-                          className="pb-1  d-block d-md-none"
-                          htmlFor="email"
-                        >
-                          Email Address
-                        </label>
-                        <div className="input-group">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text fixedWidth d-none d-md-block">
-                              Username
-                            </span>
-                          </div>
+                        <Label for="email" className="d-block d-sm-none">
+                          Email
+                        </Label>
+                        <InputGroup>
                           <Input
                             type="email"
                             name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder={`${"Enter email Address "}`}
-                            required
+                            placeholder="demouser@factorfox.com"
                           />
-                        </div>
+                        </InputGroup>
                       </FormGroup>
-
-                      <div className="mt-5 d-flex justify-content-end ">
-                        <Link to="/"> Return to Login </Link>
+                      <Link to={"/"} className="btn btn-link">
+                        Return to Login
+                      </Link>
+                      <FormGroup className=" text-center">
                         <Button color="primary" onClick={handleForgotPassword}>
                           Reset Password
                         </Button>
-                      </div>
+                      </FormGroup>
                     </Form>
-                    <div className="divider"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );

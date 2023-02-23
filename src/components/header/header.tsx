@@ -11,13 +11,12 @@ import {
 import SideBar from "../../common-components/sidebar/sidebar";
 import MenuBar from "./components/menu-bar";
 import Search from "./components/search";
-
-
+import { handleLogout } from "../../components/header/components/logout/logout";
 const Header = () => {
-  let history = useHistory();
+  // let history = useHistory();
   return (
     <div className="header-section">
-      <SideBar icon={'bars'} />
+      <SideBar icon={"bars"} />
       <div className="header__left">
         {/* <a className='logo' target='_blank' href='/'>
               <img src='images/factorfox.png' alt='FactorFox' />
@@ -49,13 +48,13 @@ const Header = () => {
             <DropdownMenu>
               <DropdownItem
                 className="border-bottom"
-              // onClick={() => history.push('/user-profile')}
+                // onClick={() => history.push('/user-profile')}
               >
                 <div className="d-flex justify-content-between text-align-center">
                   <span className="text-dark">Profile</span>
                 </div>
               </DropdownItem>
-              <DropdownItem className="border-bottom" onClick={() => history.push("/")}>
+              <DropdownItem className="border-bottom" onClick={handleLogout}>
                 <div className="d-flex justify-content-between text-align-center">
                   <span className="text-dark">Logout</span>
                   <i
@@ -68,7 +67,7 @@ const Header = () => {
           </UncontrolledButtonDropdown>
         </div>
       </div>
-      <SideBar icon={'bell'} openside={"end"} />
+      <SideBar icon={"bell"} openside={"end"} />
     </div>
   );
 };
