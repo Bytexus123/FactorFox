@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "reactstrap";
+import clientData from './clientData.json'
 
 const GraphAllClientsTabel = () => {
   return (
@@ -11,19 +12,21 @@ const GraphAllClientsTabel = () => {
             <th>Percent(%)</th>
             <th>Amount</th>
           </tr>
-        </thead>
-        <tbody>
           <tr>
-          <th>Avg./Total</th>
-            <th>1.92</th>
+            <th>Avg./Total</th>
+            <th>1.75</th>
             <th>16,976,384,452.19</th>
           </tr>
-          <tr>
-            <td>18 Dec New</td>
-            <td>52.89</td>
-            <td>8,979,299,642.00</td>
-          </tr>
-        </tbody>
+        </thead>
+        {clientData.map((user) => (
+          <>
+            <tbody>
+              <td>{user.client}</td>
+              <td>{user.percent}</td>
+              <td>{user.amount}</td>
+            </tbody>
+          </>
+        ))}
       </Table>
     </div>
   );

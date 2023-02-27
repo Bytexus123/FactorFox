@@ -2,6 +2,7 @@ import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
+import GraphAllCustomerTabel from "./graph-allcustomer-tabel";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface AllCustomerChartProps {
@@ -10,11 +11,30 @@ interface AllCustomerChartProps {
 
 const AllCustomerChart = ({ title }: AllCustomerChartProps) => {
   const chartData = {
-    labels: ["0-30", "31-60", "61-90", "90+"],
+    labels: [
+      "XYZ Pvt ltd",
+      "01 Arlen Cu",
+      "Ernesto's Company",
+      "02TESTING",
+      "001 Samsum",
+      "Gladiatorial Games, LLC",
+      "0FCS Customer",
+      "AZCCCCC-1",
+      "01 Arlen Customer",
+      "24MayFCSCustomer",
+      "A Perfect Girl, Inc.",
+      "3 PEAKS LOGISTICS LP",
+      "01TESTING01",
+      "3 Bear Energy LLC",
+      "cus_test1",
+    ],
     datasets: [
       {
-        label: "Advances %",
-        data: [0.76, 3.25, 0.17, 95.82],
+        label: "Percent (%)	",
+        data: [
+          52.89, 47.05, 0.06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+          0.0, 0.0,
+        ],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -22,6 +42,15 @@ const AllCustomerChart = ({ title }: AllCustomerChartProps) => {
           "rgba(75, 192, 192, 0.2)",
           "rgba(153, 102, 255, 0.2)",
           "rgba(255, 159, 64, 0.2)",
+          "rgba(87, 40, 145, 0.8)",
+          "rgba(87, 116, 145, 0.8)",
+          "rgba(87, 116, 23, 0.8)",
+          "rgba(199, 116, 23, 1)",
+          "rgba(199, 197, 101, 1)",
+          "rgba(199, 197, 0, 1)",
+          "rgba(0, 0, 255, 0.57)",
+          "rgba(0, 157, 132, 0.57)",
+          "rgba(255, 45, 255, 1)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
@@ -30,6 +59,15 @@ const AllCustomerChart = ({ title }: AllCustomerChartProps) => {
           "rgba(75, 192, 192, 1)",
           "rgba(153, 102, 255, 1)",
           "rgba(255, 159, 64, 1)",
+          "rgba(104, 59, 15, 1)",
+          "rgba(104, 107, 15, 1)",
+          "rgba(104, 107, 83, 1)",
+          "rgba(0, 11, 84, 0.81)",
+          "rgba(117, 11, 84, 0.81)",
+          "rgba(255, 0, 120, 1)",
+          "rgba(148, 176, 112, 1)",
+          "rgba(218, 176, 112, 1)",
+          "rgba(218, 105, 112, 1)",
         ],
         borderWidth: 1,
       },
@@ -43,6 +81,7 @@ const AllCustomerChart = ({ title }: AllCustomerChartProps) => {
         </CardHeader>
         <CardBody className="overflow-auto">
           <Pie data={chartData} style={{ maxHeight: "360px" }} />
+          <GraphAllCustomerTabel />
         </CardBody>
       </Card>
     </div>

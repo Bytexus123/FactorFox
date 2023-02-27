@@ -6,21 +6,20 @@ import DashboardModel from "./components/dashboard";
 const App = () => {
   const [loggedIn, setloggedIn] = useState(false);
 
-  const callback = (childData: any) => {
+  const callback = (childData: boolean) => {
     setloggedIn(childData);
   };
   return (
     <div className="main-content">
       <Switch>
         <Route path="/dashboard">
-          {/* {loggedIn ? <DashboardModel /> : <Redirect to="/" />} */}
           <DashboardModel />
         </Route>
         <Route exact path="/">
           {loggedIn ? (
-            <Redirect to="/Dashboard" />
+            <Redirect to="/dashboard" />
           ) : (
-            <LoginPage Callback={callback} />
+            <LoginPage callback={callback} />
           )}
         </Route>
         <Route path="/forgetpassword">

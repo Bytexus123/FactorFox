@@ -1,32 +1,35 @@
-import React from 'react'
+import React from "react";
 import { Table } from "reactstrap";
+import Data from "./customerData.json";
 
 const GraphAllCustomerTabel = () => {
   return (
     <div>
-      <Table borderless size="sm">
+     <Table borderless size="sm">
         <thead>
           <tr>
             <th>Client</th>
             <th>Percent(%)</th>
             <th>Amount</th>
           </tr>
-        </thead>
-        <tbody>
           <tr>
             <th>Avg./Total</th>
-            <th>1.75</th>
-            <th>16,976,384,452.19</th>
+            <th>1.82</th>
+            <th>14,380,927,260.11</th>
           </tr>
-          <tr>
-            <td>XYZ Pvt ltd</td>
-            <td>52.89</td>
-            <td>8,978,667,857.00</td>
-          </tr>
-        </tbody>
+        </thead>
+        {Data.map((user) => (
+          <>
+            <tbody>
+              <td>{user.client}</td>
+              <td>{user.percent}</td>
+              <td>{user.amount}</td>
+            </tbody>
+          </>
+        ))}
       </Table>
     </div>
-  )
-}
+  );
+};
 
-export default GraphAllCustomerTabel
+export default GraphAllCustomerTabel;

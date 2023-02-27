@@ -12,19 +12,21 @@ import SideBar from "../../common-components/sidebar/sidebar";
 import MenuBar from "./components/menu-bar";
 import Search from "./components/search";
 import { handleLogout } from "../../components/header/components/logout/logout";
+import CompanyLogo from "../../common-components/company-logo";
 const Header = () => {
   // let history = useHistory();
   return (
     <div className="header-section">
       <SideBar icon={"bars"} />
-      <div className="header__left">
-        {/* <a className='logo' target='_blank' href='/'>
+      <CompanyLogo  height={30} shrinkOnSmallScreen/>
+      {/* <div className="header__left">
+        <a className='logo' target='_blank' href='/'>
               <img src='images/factorfox.png' alt='FactorFox' />
-            </a> */}
+            </a>
         <Link className="logo" title="FactorFox" to="/">
           <img src="images/factorfox.png" alt="FactorFox" height={40} />
         </Link>
-      </div>
+      </div> */}
       <MenuBar />
       <Search />
       <div className="header__right">

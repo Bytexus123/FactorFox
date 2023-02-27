@@ -65,13 +65,17 @@ const ForgotPassword = () => {
                             name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="demouser@factorfox.com"
+                            placeholder={`${"Enter email Address "}`}
+                            required
                           />
                         </InputGroup>
                       </FormGroup>
-                      <Link to={"/"} className="btn btn-link">
-                        Return to Login
-                      </Link>
+                      <FormGroup className="text-end">
+                        <Link to={"/"} className="btn btn-link">
+                          Return to Login
+                        </Link>
+                      </FormGroup>
+
                       <FormGroup className=" text-center">
                         <Button color="primary" onClick={handleForgotPassword}>
                           Reset Password

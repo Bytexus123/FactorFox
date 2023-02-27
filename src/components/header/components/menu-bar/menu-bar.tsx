@@ -19,7 +19,7 @@ const MenuBar = ({ direction }: MenuBarProps) => {
           <DropdownToggle caret color="transparent" className="text-start">
             <span className="pe-none">
               <span className="">
-                <span className="d-none d-md-inline">Company</span>
+                <span className="d-md-inline">Company</span>
               </span>
             </span>
           </DropdownToggle>

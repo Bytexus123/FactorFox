@@ -1,10 +1,10 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-interface LogoProps {
+interface CompanyLogoProps {
   height?: string | number;
   shrinkOnSmallScreen?: boolean;
 }
-const CompanyLogo = ({ height, shrinkOnSmallScreen }: LogoProps) => {
+const CompanyLogo = ({ height, shrinkOnSmallScreen }: CompanyLogoProps) => {
   const below576 = useMediaQuery({ query: "(max-width: 576px)" });
   // set  default height to 30px using default props
   height = height || "30";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import {
   Button,
   Col,
@@ -13,22 +13,29 @@ import {
   Row,
 } from "reactstrap";
 import CompanyLogo from "../../common-components/company-logo";
-import validateInfo from "../../validation/validation";
+import { validation } from "../validation/validation";
 
 interface LoginPageProps {
-  email?: string;
-  password?: string;
-  Callback: any;
+  callback: (data: any) => void;
 }
 
-const LoginPage = ({ Callback }: LoginPageProps) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState({})
+const LoginPage = ({ callback }: LoginPageProps) => {
+  const [values, setValues] = useState({ email: "", password: "" });
+  const [error, setError] = useState({ email: "", password: "" });
 
-  const login = () => {
-    Callback(true);
-    // setError(validateInfo(values))
+  const handleLogin = (event: any) => {
+    event.preventDefault();
+    const errorData = validation(values);
+    if (Object.keys(errorData).length == 0) {
+      callback(true);
+      return <Redirect to="/dashboard" />;
+    } else {
+      setError(errorData);
+    }
+  };
+
+  const handleInput = (e: any) => {
+    setValues({ ...values, [e.target.name]: [e.target.value] });
   };
 
   return (
@@ -51,7 +58,6 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                     </div>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col sm={10} className="mx-auto">
                     <div className="text-center my-4">
@@ -60,8 +66,7 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                         Please Sign In to your Account
                       </p>
                     </div>
-
-                    <Form className="mt-5">
+                    <Form className="mt-5" onSubmit={handleLogin}>
                       <FormGroup>
                         <Label for="email" className="d-block d-sm-none">
                           Username
@@ -74,14 +79,16 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                           <Input
                             type="email"
                             name="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            value={values.email}
+                            onChange={handleInput}
                             placeholder={`${"Enter email Address "}`}
-                            required
                           />
                         </InputGroup>
+                        {error.email && (
+                          <p style={{ color: "red" }}>{error.email}</p>
+                        )}
                       </FormGroup>
-                      <FormGroup className="text-end">
+                      <FormGroup>
                         <Label for="password" className="d-block d-sm-none">
                           Password
                         </Label>
@@ -93,12 +100,16 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                           <Input
                             type="password"
                             name="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            value={values.password}
+                            onChange={handleInput}
                             placeholder={`${"Enter Password "}`}
-                            required
                           />
                         </InputGroup>
+                        {error.password && (
+                          <p style={{ color: "red" }}>{error.password}</p>
+                        )}
+                      </FormGroup>
+                      <FormGroup className="text-end">
                         <Link
                           to={"/forgetpassword"}
                           className="px-0 btn btn-link"
@@ -107,11 +118,7 @@ const LoginPage = ({ Callback }: LoginPageProps) => {
                         </Link>
                       </FormGroup>
                       <FormGroup className="text-center">
-                        <Button
-                          color="primary"
-                          className="px-5"
-                          onClick={login}
-                        >
+                        <Button color="primary" className="px-5" type="submit">
                           Login
                         </Button>
                       </FormGroup>
