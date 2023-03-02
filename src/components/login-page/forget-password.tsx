@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 import CompanyLogo from "../../common-components/company-logo";
 
-interface LoginPageProps {
+interface ForgotPasswordProps {
   email?: string;
 }
 

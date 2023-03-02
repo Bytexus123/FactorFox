@@ -17,19 +17,13 @@ const Header = () => {
   // let history = useHistory();
   return (
     <div className="header-section">
+      <div className="logo-section d-flex align-items-center">
       <SideBar icon={"bars"} />
       <CompanyLogo  height={30} shrinkOnSmallScreen/>
-      {/* <div className="header__left">
-        <a className='logo' target='_blank' href='/'>
-              <img src='images/factorfox.png' alt='FactorFox' />
-            </a>
-        <Link className="logo" title="FactorFox" to="/">
-          <img src="images/factorfox.png" alt="FactorFox" height={40} />
-        </Link>
-      </div> */}
+      </div>
       <MenuBar />
       <Search />
-      <div className="header__right">
+      <div className="menu-section">
         <div className="d-flex align-items-center">
           <UncontrolledButtonDropdown direction="down" className="float-right">
             <DropdownToggle
