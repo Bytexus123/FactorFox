@@ -4,11 +4,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
 } from "reactstrap";
 
 const NaviagtionModel = () => {

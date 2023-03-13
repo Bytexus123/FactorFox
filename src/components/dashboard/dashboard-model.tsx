@@ -8,12 +8,14 @@ import PieChart from "../pie-chart";
 import Header from "../header";
 import NaviagtionModel from "../navigation/navigation-model";
 import DashboardChart from "../graphs/graph-chart";
+import { Redirect } from "react-router-dom";
 
 interface DashboardModelProps {
-  element?: HTMLElement;
+  isloggedIn?: boolean;
+  loginStatus: (data: any) => void;
 }
 
-const DashboardModel = ({}: DashboardModelProps) => {
+const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
   const setCardHeight = () => {
     const rs = document.querySelectorAll<HTMLElement>(".section");
     rs.forEach((r) => {
@@ -28,7 +30,13 @@ const DashboardModel = ({}: DashboardModelProps) => {
       });
     });
   };
-  useEffect(() => setCardHeight(), []);
+  useEffect(() => {
+    document.title = "FF Dashboard";
+    setCardHeight();
+    (!isloggedIn) &&
+      <Redirect to="/" />;
+
+  }, []);
 
   return (
     <div className="content">
@@ -349,6 +357,84 @@ const DashboardModel = ({}: DashboardModelProps) => {
                         </tr>
                         <tr>
                           <td>Paid Pre-Funds</td>
+                          <td className="text-right">€0.00</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm="12" className="pt-3">
+                    <Table striped responsive size="sm" className="small">
+                      <tbody className="small">
+                        <tr>
+                          <td>Invoice Purchased by Invoice Date</td>
+                          <td className="text-right">€146,060.00</td>
+                        </tr>
+                        <tr>
+                          <td>Net Advances by Advance Date</td>
+                          <td className="text-right">€109,201.79</td>
+                        </tr>
+                        <tr>
+                          <td>Advance Discounts</td>
+                          <td className="text-right">€664.48</td>
+                        </tr>
+                        <tr>
+                          <td>Received Discounts</td>
+                          <td className="text-right">€559,258.06</td>
+                        </tr>
+                        <tr>
+                          <td>Total Receipts</td>
+                          <td className="text-right">€4,909,121.20</td>
+                        </tr>
+
+                        <tr>
+                          <td>Total Chargebacks</td>
+                          <td className="text-right">€800.00</td>
+                        </tr>
+                        <tr>
+                          <td>Advance Chargebacks</td>
+                          <td className="text-right">€800.00</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm="12" className="pt-3">
+                    <Table striped responsive size="sm" className="small">
+                      <tbody className="small">
+                        <tr>
+                          <td>Invoice Purchased by Invoice Date</td>
+                          <td className="text-right">€146,060.00</td>
+                        </tr>
+                        <tr>
+                          <td>Net Advances by Advance Date</td>
+                          <td className="text-right">€109,201.79</td>
+                        </tr>
+                        <tr>
+                          <td>Advance Discounts</td>
+                          <td className="text-right">€664.48</td>
+                        </tr>
+                        <tr>
+                          <td>Received Discounts</td>
+                          <td className="text-right">€559,258.06</td>
+                        </tr>
+                        <tr>
+                          <td>Total Receipts</td>
+                          <td className="text-right">€4,909,121.20</td>
+                        </tr>
+
+                        <tr>
+                          <td>Total Chargebacks</td>
+                          <td className="text-right">€800.00</td>
+                        </tr>
+                        <tr>
+                          <td>Advance Chargebacks</td>
+                          <td className="text-right">€800.00</td>
+                        </tr>
+                        <tr>
+                          <td>Discount Chargebacks</td>
                           <td className="text-right">€0.00</td>
                         </tr>
                       </tbody>

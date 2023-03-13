@@ -24,11 +24,17 @@ const MenuBar = ({ direction }: MenuBarProps) => {
             </span>
           </DropdownToggle>
           <DropdownMenu end className="py-0">
-            <DropdownItem className="py-2 d-flex border-bottom">
-              <DropdownItem onClick={() => { }}>Company 1</DropdownItem>
+            <DropdownItem
+              className="py-2 d-flex border-bottom"
+              onClick={() => {}}
+            >
+              Company 1
             </DropdownItem>
-            <DropdownItem className="py-2 d-flex border-bottom">
-              <DropdownItem onClick={() => { }}>Company 2</DropdownItem>
+            <DropdownItem
+              className="py-2 d-flex border-bottom"
+              onClick={() => {}}
+            >
+              Company 2
             </DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>

@@ -6,7 +6,6 @@ interface CompanyLogoProps {
 }
 const CompanyLogo = ({ height, shrinkOnSmallScreen }: CompanyLogoProps) => {
   const below576 = useMediaQuery({ query: "(max-width: 576px)" });
-  // set  default height to 30px using default props
   height = height || "30";
   const logourl = "./images/factorfox.png";
   const logoalt = "./images/logo-slim.png";

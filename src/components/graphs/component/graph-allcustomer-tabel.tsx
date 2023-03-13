@@ -5,7 +5,7 @@ import Data from "./customerData.json";
 const GraphAllCustomerTabel = () => {
   return (
     <div>
-     <Table borderless size="sm">
+      <Table borderless size="sm">
         <thead>
           <tr>
             <th>Client</th>
@@ -18,15 +18,15 @@ const GraphAllCustomerTabel = () => {
             <th>14,380,927,260.11</th>
           </tr>
         </thead>
-        {Data.map((user) => (
-          <>
-            <tbody>
+        <tbody>
+          {Data.map((user, index) => (
+            <tr key={index}>
               <td>{user.client}</td>
               <td>{user.percent}</td>
               <td>{user.amount}</td>
-            </tbody>
-          </>
-        ))}
+            </tr>
+          ))}
+        </tbody>
       </Table>
     </div>
   );

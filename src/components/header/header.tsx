@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+// import { Link, useHistory } from "react-router-dom";
 import {
   Col,
   DropdownItem,
@@ -8,7 +8,7 @@ import {
   Row,
   UncontrolledButtonDropdown,
 } from "reactstrap";
-import SideBar from "../../common-components/sidebar/sidebar";
+// import SideBar from "../../common-components/sidebar/sidebar";
 import MenuBar from "./components/menu-bar";
 import Search from "./components/search";
 import { handleLogout } from "../../components/header/components/logout/logout";
@@ -17,8 +17,8 @@ const Header = () => {
   // let history = useHistory();
   return (
     <div className="header-section">
-      <div className="logo-section d-flex align-items-center">
-      <SideBar icon={"bars"} />
+      <div className="logo-section d-flex">
+      {/* <SideBar icon={"bars"} /> */}
       <CompanyLogo  height={30} shrinkOnSmallScreen/>
       </div>
       <MenuBar />
@@ -35,8 +35,8 @@ const Header = () => {
                 <Col className="user-dropdown-greeting">
                   <i className="fa-light fa-user"></i>
                   <div className="d-block">
-                    <div>user</div>
-                    <div>Org</div>
+                    <div>{localStorage.getItem("user") || "user"}</div>
+                    <div>FactorFox</div>
                   </div>
                 </Col>
               </Row>
@@ -63,7 +63,7 @@ const Header = () => {
           </UncontrolledButtonDropdown>
         </div>
       </div>
-      <SideBar icon={"bell"} openside={"end"} />
+      {/* <SideBar icon={"bell"} openside={"end"} /> */}
     </div>
   );
 };

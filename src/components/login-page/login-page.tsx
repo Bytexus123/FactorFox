@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useEffect, useReducer } from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Col,
@@ -14,28 +14,55 @@ import {
 } from "reactstrap";
 import CompanyLogo from "../../common-components/company-logo";
 import { validation } from "../validation/validation";
+import { LoginApi } from "./login-api";
 
 interface LoginPageProps {
-  callback: (data: any) => void;
+  loginStatus: (data: any) => void;
 }
+const reducer = (state: any, action: any) => {
+  switch (action.type) {
+    case "setFormData":
+      return {
+        ...state,
+        formdata: action.payload,
+      };
+    case "setErrorData":
+      return {
+        ...state,
+        errordata: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+const LoginPage = ({ loginStatus }: LoginPageProps) => {
+  const [state, dispatch] = useReducer(reducer, {
+    errordata: { email: "", password: "" },
+    formdata: { email: "", password: "" },
+  });
 
-const LoginPage = ({ callback }: LoginPageProps) => {
-  const [values, setValues] = useState({ email: "", password: "" });
-  const [error, setError] = useState({ email: "", password: "" });
-
-  const handleLogin = (event: any) => {
+  const handleLogin = async (event: any) => {
     event.preventDefault();
-    const errorData = validation(values);
+    const errorData = validation(state.formdata);
     if (Object.keys(errorData).length == 0) {
-      callback(true);
-      return <Redirect to="/dashboard" />;
+      LoginApi(state.formdata).then((res) => {
+        if (res?.status === 200) {
+          loginStatus(true);
+          localStorage.setItem("user", state.formdata.email);
+          localStorage.setItem("token", res.token);
+        } else {
+          dispatch({
+            type: "setErrorData",
+            payload: {
+              email: "Invalid Credentials",
+              password: "Invalid Credentials",
+            },
+          });
+        }
+      });
     } else {
-      setError(errorData);
+      dispatch({ type: "setErrorData", payload: errorData });
     }
-  };
-
-  const handleInput = (e: any) => {
-    setValues({ ...values, [e.target.name]: [e.target.value] });
   };
 
   return (
@@ -79,13 +106,23 @@ const LoginPage = ({ callback }: LoginPageProps) => {
                           <Input
                             type="email"
                             name="email"
-                            value={values.email}
-                            onChange={handleInput}
+                            value={state.formdata.email}
+                            onChange={(e) =>
+                              dispatch({
+                                type: "setFormData",
+                                payload: {
+                                  ...state.formdata,
+                                  email: e.target.value,
+                                },
+                              })
+                            }
                             placeholder={`${"Enter email Address "}`}
                           />
                         </InputGroup>
-                        {error.email && (
-                          <p style={{ color: "red" }}>{error.email}</p>
+                        {state.errordata.email && (
+                          <label className="error">
+                            {state.errordata.email}
+                          </label>
                         )}
                       </FormGroup>
                       <FormGroup>
@@ -100,13 +137,23 @@ const LoginPage = ({ callback }: LoginPageProps) => {
                           <Input
                             type="password"
                             name="password"
-                            value={values.password}
-                            onChange={handleInput}
+                            value={state.formdata.password}
+                            onChange={(e) =>
+                              dispatch({
+                                type: "setFormData",
+                                payload: {
+                                  ...state.formdata,
+                                  password: e.target.value,
+                                },
+                              })
+                            }
                             placeholder={`${"Enter Password "}`}
                           />
                         </InputGroup>
-                        {error.password && (
-                          <p style={{ color: "red" }}>{error.password}</p>
+                        {state.errordata.password && (
+                          <label className="error">
+                            {state.errordata.password}
+                          </label>
                         )}
                       </FormGroup>
                       <FormGroup className="text-end">

@@ -1,5 +1,6 @@
+import Cookies from "js-cookie";
 export const handleLogout = () => {
-    localStorage.clear()
-    window.location.href = "/";
-}
-
+  Cookies.remove("loggedIn");
+  localStorage.clear();
+  window.location.href = "/";
+};
