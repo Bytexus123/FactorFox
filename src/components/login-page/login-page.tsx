@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import CompanyLogo from "../../common-components/company-logo";
 import { validation } from "../validation/validation";
-import { LoginApi } from "./login-api";
+import { LoginApi } from "../../packages/factorfox-api/login-api";
 
 interface LoginPageProps {
   loginStatus: (data: any) => void;
