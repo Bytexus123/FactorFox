@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
@@ -11,6 +11,7 @@ import {
   InputGroupText,
   Label,
   Row,
+  Spinner,
 } from "reactstrap";
 import CompanyLogo from "../../common-components/company-logo";
 import { validation } from "../validation/validation";
@@ -31,6 +32,11 @@ const reducer = (state: any, action: any) => {
         ...state,
         errordata: action.payload,
       };
+    case "setSpinnerData":
+      return {
+        ...state,
+        spinner: action.payload,
+      };
     default:
       return state;
   }
@@ -39,12 +45,14 @@ const LoginPage = ({ loginStatus }: LoginPageProps) => {
   const [state, dispatch] = useReducer(reducer, {
     errordata: { email: "", password: "" },
     formdata: { email: "", password: "" },
+    spinner: false,
   });
 
   const handleLogin = async (event: any) => {
     event.preventDefault();
     const errorData = validation(state.formdata);
     if (Object.keys(errorData).length == 0) {
+      dispatch({ type: "setSpinnerData", payload: true });
       LoginApi(state.formdata).then((res) => {
         if (res?.status === 200) {
           loginStatus(true);
@@ -58,6 +66,7 @@ const LoginPage = ({ loginStatus }: LoginPageProps) => {
               password: "Invalid Credentials",
             },
           });
+          dispatch({ type: "setSpinnerData", payload: false });
         }
       });
     } else {
@@ -165,8 +174,20 @@ const LoginPage = ({ loginStatus }: LoginPageProps) => {
                         </Link>
                       </FormGroup>
                       <FormGroup className="text-center">
-                        <Button color="primary" className="px-5" type="submit">
-                          Login
+                        <Button
+                          color="primary"
+                          className="px-5 py-2 shadow"
+                          type="submit"
+                          disabled={state.spinner}
+                        >
+                          {state.spinner ? (
+                            <>
+                              <Spinner size="sm"> Loading...</Spinner> Logging
+                              In
+                            </>
+                          ) : (
+                            "Login"
+                          )}
                         </Button>
                       </FormGroup>
                     </Form>
