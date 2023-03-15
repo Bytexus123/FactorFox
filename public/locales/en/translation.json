@@ -1,0 +1,12 @@
+{
+    ".LANG": "en",
+    "languages": {
+        "en": "English"
+    },
+    "dashboard": {
+        "performance":"Performance",
+        "count": "Count",
+        "advancedue":"Advance Due",
+        "total":"Total"
+    }
+}

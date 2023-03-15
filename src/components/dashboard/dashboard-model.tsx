@@ -9,6 +9,7 @@ import Header from "../header";
 import NaviagtionModel from "../navigation/navigation-model";
 import DashboardChart from "../graphs/graph-chart";
 import { Redirect } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 interface DashboardModelProps {
   isloggedIn?: boolean;
@@ -16,6 +17,7 @@ interface DashboardModelProps {
 }
 
 const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
+  const { t } = useTranslation()
   const setCardHeight = () => {
     const rs = document.querySelectorAll<HTMLElement>(".section");
     rs.forEach((r) => {
@@ -43,7 +45,7 @@ const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
       <Header />
       <NaviagtionModel />
       <Container fluid className="pt-3">
-        <RowSection headerName="Performance">
+        <RowSection headerName={t('dashboard.performance')}>
           <Col xl={4} md={6}>
             <CoulmnSection>
               <TabColumn tabTitles={["ADV", "INV"]}>
@@ -54,9 +56,9 @@ const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
                         <tr>
                           <th className="text-left"></th>
                           <th className="text-left"></th>
-                          <th className="text-right ng-binding">Count</th>
+                          <th className="text-right ng-binding">{t('dashboard.count')}</th>
 
-                          <th className="text-right ng-binding">Advance Due</th>
+                          <th className="text-right ng-binding">{t('dashboard.advancedue')}</th>
                           <th className="text-right">%</th>
                         </tr>
                       </thead>
@@ -67,7 +69,7 @@ const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
                         >
                           <td></td>
                           <td className="text-left">
-                            <b className="ng-binding">Total</b>
+                            <b className="ng-binding">{t('dashboard.total')}</b>
                           </td>
                           <td className="text-right ng-binding">751</td>
                           <td className="text-right ng-binding">
