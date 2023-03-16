@@ -16,7 +16,7 @@ interface DashboardModelProps {
   loginStatus: (data: any) => void;
 }
 
-const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
+const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
   const { t } = useTranslation()
   const setCardHeight = () => {
     const rs = document.querySelectorAll<HTMLElement>(".section");
@@ -37,7 +37,6 @@ const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
     setCardHeight();
     (!isloggedIn) &&
       <Redirect to="/" />;
-
   }, []);
 
   return (
