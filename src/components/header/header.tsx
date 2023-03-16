@@ -13,8 +13,11 @@ import MenuBar from "./components/menu-bar";
 import Search from "./components/search";
 import { handleLogout } from "../../components/header/components/logout/logout";
 import CompanyLogo from "../../common-components/company-logo";
+import { useTranslation } from "react-i18next";
+
 const Header = () => {
   // let history = useHistory();
+  const { t } = useTranslation()
   return (
     <div className="header-section">
       <div className="logo-section d-flex">
@@ -36,7 +39,7 @@ const Header = () => {
                   <i className="fa-light fa-user"></i>
                   <div className="d-block">
                     <div>{localStorage.getItem("user") || "user"}</div>
-                    <div>FactorFox</div>
+                    <div>{t('header.factorfox')}</div>
                   </div>
                 </Col>
               </Row>

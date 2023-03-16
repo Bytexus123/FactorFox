@@ -8,5 +8,8 @@
         "count": "Count",
         "advancedue":"Advance Due",
         "total":"Total"
+    },
+    "header":{
+        "factorfox":"FactorFox"
     }
 }
