@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardBody } from "reactstrap";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface PieChartProps {
-  title: string
+  title: string;
   chartData?: React.ReactNode | React.ReactNode[] | any;
 }
 const PieChart = ({ title }: PieChartProps) => {
@@ -43,10 +43,7 @@ const PieChart = ({ title }: PieChartProps) => {
       </CardHeader>
       <CardBody className="overflow-auto">
         {}
-        <Pie
-          data={chartData}
-          style={{ maxHeight: "360px" }}
-        />
+        <Pie data={chartData} style={{ maxHeight: "360px" }} />
       </CardBody>
     </Card>
   );

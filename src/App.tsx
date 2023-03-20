@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { ForgotPassword, LoginPage } from "./components/login-page";
 import DashboardModel from "./components/dashboard";
@@ -15,23 +15,25 @@ const App = () => {
     setloggedIn(data);
   };
   return (
-    <div className="main-content">
-      <Switch>
-        <Route path="/dashboard">
-          <DashboardModel loginStatus={setLogin} />
-        </Route>
-        <Route exact path="/">
-          {loggedIn ? (
-            <Redirect to="/dashboard" />
-          ) : (
-            <LoginPage loginStatus={setLogin} />
-          )}
-        </Route>
-        <Route path="/forgetpassword">
-          <ForgotPassword />
-        </Route>
-      </Switch>
-    </div>
+    <>
+      <Suspense fallback="Loading...">
+        <Switch>
+          <Route path="/dashboard">
+            <DashboardModel loginStatus={setLogin} />
+          </Route>
+          <Route exact path="/">
+            {loggedIn ? (
+              <Redirect to="/dashboard" />
+            ) : (
+              <LoginPage loginStatus={setLogin} />
+            )}
+          </Route>
+          <Route path="/forgetpassword">
+            <ForgotPassword />
+          </Route>
+        </Switch>
+      </Suspense>
+    </>
   );
 };
 

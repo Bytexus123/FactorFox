@@ -1,16 +1,10 @@
-import React from 'react'
+import React from "react";
 // import { useMediaQuery } from "react-responsive";
-import {
-  Nav,
-  NavItem,
-  NavLink,
-} from "reactstrap";
+import { Nav, NavItem, NavLink } from "reactstrap";
 
 const NaviagtionModel = () => {
   // const media768 = useMediaQuery({ query: "(min-width: 768px)" });
-  const navitems = [
-    "Reports",
-  ];
+  const navitems = ["Reports"];
 
   return (
     <div className="theme-nav">
@@ -24,7 +18,7 @@ const NaviagtionModel = () => {
         ))}
       </Nav>
     </div>
-  )
-}
+  );
+};
 
-export default NaviagtionModel
+export default NaviagtionModel;

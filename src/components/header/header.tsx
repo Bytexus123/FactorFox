@@ -17,12 +17,12 @@ import { useTranslation } from "react-i18next";
 
 const Header = () => {
   // let history = useHistory();
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <div className="header-section">
       <div className="logo-section d-flex">
-      {/* <SideBar icon={"bars"} /> */}
-      <CompanyLogo  height={30} shrinkOnSmallScreen/>
+        {/* <SideBar icon={"bars"} /> */}
+        <CompanyLogo height={30} shrinkOnSmallScreen />
       </div>
       <MenuBar />
       <Search />
@@ -39,7 +39,7 @@ const Header = () => {
                   <i className="fa-light fa-user"></i>
                   <div className="d-block">
                     <div>{localStorage.getItem("user") || "user"}</div>
-                    <div>{t('header.factorfox')}</div>
+                    <div>{t("header.factorfox")}</div>
                   </div>
                 </Col>
               </Row>

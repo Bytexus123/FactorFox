@@ -42,7 +42,7 @@ const SideBar = ({ icon, openside }: SideBarProps) => {
             setShow(false);
           }}
         >
-          {!openside&& <CompanyLogo/>}
+          {!openside && <CompanyLogo />}
         </OffcanvasHeader>
         <OffcanvasBody>
           <Nav vertical>

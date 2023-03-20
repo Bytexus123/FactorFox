@@ -12,7 +12,7 @@ import {
 
 interface RowSectionProps {
   headerName: string;
-  children?: any[] | JSX.Element | JSX.Element[]
+  children?: any[] | JSX.Element | JSX.Element[];
 }
 const RowSection = ({ headerName, children }: RowSectionProps) => {
   const hid = headerName.replace(/\s+/g, "-").toLowerCase();

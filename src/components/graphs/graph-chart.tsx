@@ -1,10 +1,7 @@
 import React from "react";
 import { Container, Col } from "reactstrap";
 import RowSection from "../../common-components/row-section";
-import {
-  AllClientsChart,
-  AllCustomerChart,
-} from "./component";
+import { AllClientsChart, AllCustomerChart } from "./component";
 
 const GraphChart = () => {
   return (

@@ -17,7 +17,7 @@ interface ForgotPasswordProps {
   email?: string;
 }
 
-const ForgotPassword = ({}:ForgotPasswordProps) => {
+const ForgotPassword = ({}: ForgotPasswordProps) => {
   const [email, setEmail] = useState("");
 
   const handleForgotPassword = () => {

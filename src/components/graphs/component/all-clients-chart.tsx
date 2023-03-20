@@ -8,7 +8,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface AllClientsChartProps {
   title: string;
-  type?: string
+  type?: string;
 }
 
 const AllClientsChart = ({ title }: AllClientsChartProps) => {
@@ -83,7 +83,7 @@ const AllClientsChart = ({ title }: AllClientsChartProps) => {
         </CardHeader>
         <CardBody className="overflow-auto">
           <Pie data={chartData} style={{ maxHeight: "360px" }} />
-          <GraphAllClientsTabel/>
+          <GraphAllClientsTabel />
         </CardBody>
       </Card>
     </div>

@@ -9,7 +9,7 @@ import Header from "../header";
 import NaviagtionModel from "../navigation/navigation-model";
 import DashboardChart from "../graphs/graph-chart";
 import { Redirect } from "react-router-dom";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
 interface DashboardModelProps {
   isloggedIn?: boolean;
@@ -17,7 +17,7 @@ interface DashboardModelProps {
 }
 
 const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const setCardHeight = () => {
     const rs = document.querySelectorAll<HTMLElement>(".section");
     rs.forEach((r) => {
@@ -35,8 +35,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
   useEffect(() => {
     document.title = "FF Dashboard";
     setCardHeight();
-    (!isloggedIn) &&
-      <Redirect to="/" />;
+    !isloggedIn && <Redirect to="/" />;
   }, []);
 
   return (
@@ -44,7 +43,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
       <Header />
       <NaviagtionModel />
       <Container fluid className="pt-3">
-        <RowSection headerName={t('dashboard.performance')}>
+        <RowSection headerName={t("dashboard.performance")}>
           <Col xl={4} md={6}>
             <CoulmnSection>
               <TabColumn tabTitles={["ADV", "INV"]}>
@@ -55,9 +54,13 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                         <tr>
                           <th className="text-left"></th>
                           <th className="text-left"></th>
-                          <th className="text-right ng-binding">{t('dashboard.count')}</th>
+                          <th className="text-right ng-binding">
+                            {t("dashboard.count")}
+                          </th>
 
-                          <th className="text-right ng-binding">{t('dashboard.advancedue')}</th>
+                          <th className="text-right ng-binding">
+                            {t("dashboard.advancedue")}
+                          </th>
                           <th className="text-right">%</th>
                         </tr>
                       </thead>
@@ -68,7 +71,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                         >
                           <td></td>
                           <td className="text-left">
-                            <b className="ng-binding">{t('dashboard.total')}</b>
+                            <b className="ng-binding">{t("dashboard.total")}</b>
                           </td>
                           <td className="text-right ng-binding">751</td>
                           <td className="text-right ng-binding">
