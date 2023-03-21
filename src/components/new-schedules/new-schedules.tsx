@@ -4,7 +4,6 @@ import CoulmnSection from "../../common-components/coulmn-section";
 import RowSection from "../../common-components/row-section";
 import TabColumn from "../../common-components/tab-column";
 import { useTranslation } from "react-i18next";
-import dashboard from "../dashboard";
 
 const NewSchedules = () => {
   const { t } = useTranslation()
