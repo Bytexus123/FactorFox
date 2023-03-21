@@ -10,6 +10,7 @@ import NaviagtionModel from "../navigation/navigation-model";
 import DashboardChart from "../graphs/graph-chart";
 import { Redirect } from "react-router-dom";
 import { useTranslation } from 'react-i18next'
+import dashboard from ".";
 
 interface DashboardModelProps {
   isloggedIn?: boolean;
@@ -48,7 +49,7 @@ const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
         <RowSection headerName={t('dashboard.performance')}>
           <Col xl={4} md={6}>
             <CoulmnSection>
-              <TabColumn tabTitles={["ADV", "INV"]}>
+              <TabColumn tabTitles={[t('dashboard.adv') , t('dashboard.inv') ]}>
                 <Row>
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
@@ -314,7 +315,7 @@ const DashboardModel = ({ isloggedIn, loginStatus }: DashboardModelProps) => {
           </Col>
           <Col xl={4} md={6}>
             <CoulmnSection>
-              <TabColumn tabTitles={["Day", "Month", "YTD"]}>
+              <TabColumn tabTitles={[t('dashboard.day'), t('dashboard.month'), t('dashboard.ytd')]}>
                 <Row>
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">

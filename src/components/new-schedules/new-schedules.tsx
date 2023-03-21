@@ -3,24 +3,28 @@ import { Container, Row, Col, TabPane, Table } from "reactstrap";
 import CoulmnSection from "../../common-components/coulmn-section";
 import RowSection from "../../common-components/row-section";
 import TabColumn from "../../common-components/tab-column";
+import { useTranslation } from "react-i18next";
+import dashboard from "../dashboard";
 
 const NewSchedules = () => {
+  const { t } = useTranslation()
   return (
     <>
       <Container fluid className="pt-3">
-        <RowSection headerName="New Schedules">
+        <RowSection headerName={t('newSchedules.newSchedules')}>
           <Col xl={4} md={6}>
-            <CoulmnSection title="Recent Entries">
+            <CoulmnSection title={`${t("newSchedules.recentEntries")}`}>
               <Table striped responsive size="sm" className="small">
                 <thead className="small">
                   <tr>
-                    <th>Schedule</th>
+                    <th>{t('newSchedules.schedule')}</th>
                     <th></th>
-                    <th>Schedule Amount</th>
-                    <th>Payment Type</th>
-                    <th>Submitted Date</th>
-                    <th>Submitted Time</th>
-                    <th>Created Date</th>
+                    <th>{t('newSchedules.scheduleAmount')}</th>
+                    <th>{t('newSchedules.paymentType')}</th>
+                    <th>{t('newSchedules.submittedDate')}</th>
+                    <th>{t('newSchedules.submittedTime')}</th>
+                    <th>{t('newSchedules.createdDate')}</th>
+
                   </tr>
                 </thead>
                 <tbody className="small">
@@ -84,17 +88,17 @@ const NewSchedules = () => {
             </CoulmnSection>
           </Col>
           <Col xl={4} md={6}>
-            <CoulmnSection title="Approved Advances">
+            <CoulmnSection title={`${t('newSchedules.approvedAdvances')}`}>
               <Table striped responsive size="sm" className="small">
                 <thead className="small">
                   <tr>
-                    <th>Payment Type</th>
-                    <th>Total Schedule Amount</th>
+                    <th>{t('newSchedules.paymentType')}</th>
+                    <th>{t('newSchedules.totalScheduleAmount')}</th>
                   </tr>
                 </thead>
                 <tbody className="small">
                   <tr>
-                    <td>EFT</td>
+                    <td>EFT</td> 
                     <td>5,040,942.01</td>
                   </tr>
                   <tr>
@@ -110,13 +114,13 @@ const NewSchedules = () => {
                     <td>1,550.00</td>
                   </tr>
                   <tr>
-                    <td>CITI CC</td>
+                    <td>CITICC</td>
                     <td>12,455.00</td>
                   </tr>
                 </tbody>
                 <tfoot className="small">
                   <tr>
-                    <th>Total Amount:</th>
+                    <th>{t('newSchedules.totalAmount')}:</th>
                     <th>210,747,771.36</th>
                   </tr>
                 </tfoot>
@@ -124,19 +128,19 @@ const NewSchedules = () => {
             </CoulmnSection>
           </Col>
           <Col xl={4} md={6}>
-            <CoulmnSection title="Prospects">
-              <TabColumn tabTitles={["Customer", "Client"]}>
+            <CoulmnSection title={`${t('newSchedules.prospects')}`} >
+              <TabColumn tabTitles={[t('newSchedules.customers'), t('newSchedules.clients')]}>
                 <TabPane tabId="1">
                   <Row>
                     <Col sm="12" className="pt-3">
                       <Table striped responsive size="sm" className="small">
                         <thead className="small">
                           <tr>
-                            <th>Company</th>
-                            <th>Motor Carrier</th>
-                            <th>Phone#</th>
-                            <th>Created By</th>
-                            <th>Submitted Date</th>
+                            <th>{t('newSchedules.company')}</th>
+                            <th>{t('newSchedules.motorCarrier')}</th>
+                            <th>{t('newSchedules.phone#')}</th>
+                            <th>{t('newSchedules.createdBy')}</th>
+                            <th>{t('newSchedules.submittedDate')}</th>
                           </tr>
                         </thead>
                         <tbody className="small">

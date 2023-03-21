@@ -1,15 +1,52 @@
 {
-    ".LANG": "en",
-    "languages": {
-        "en": "English"
-    },
-    "dashboard": {
-        "performance":"Performance",
-        "count": "Count",
-        "advancedue":"Advance Due",
-        "total":"Total"
-    },
-    "header":{
-        "factorfox":"FactorFox"
-    }
+  ".LANG": "en",
+  "languages": {
+    "en": "English"
+  },
+  "dashboard": {
+    "performance": "Performance",
+    "count": "Count",
+    "advancedue": "Advance Due",
+    "total": "Total",
+    "adv": "ADV",
+    "inv": "INV",
+    "agingSummary": "Aging Summary",
+    "day": "Day",
+    "month": "Month",
+    "ytd": "YTD"
+   
+    
+  },
+  "header": {
+    "factorfox": "FactorFox"
+  },
+  "newSchedules":{
+    "newSchedules": "New Schedules",
+    "schedule": "Schedule",
+    "scheduleAmount": "Schedule Amount",
+    "paymentType": "Payment Type",
+    "submittedDate": "Submitted Date",
+    "submittedTime": "Submitted Time",
+    "createdDate": "Created Date",
+    "approvedAdvances":"Approved Advances",
+    "totalScheduleAmount":"Total Schedule Amount",
+    "totalAmount":"Total Amount",
+    "prospects":"Prospects",
+    "customers":"Customers",
+    "clients":"Clients",
+    "company":"Company",
+    "motorCarrier":"Motor Carrier",
+    "phone#":"Phone#",
+    "createdBy":"Created By",
+    "recentEntries":"Recent Entries"
+    
+  },
+  "graph":{
+    "allClients":"All Clients",
+    "allCustomers":"All Customers",
+    "client":"Client" ,
+    "percent(%)":"Percent(%)",
+    "amount":"Amount",
+    "avg./Total":"Avg./Total"
+  }
 }
