@@ -14,11 +14,10 @@
     "day": "Day",
     "month": "Month",
     "ytd": "YTD"
-   
-    
   },
   "header": {
-    "factorfox": "FactorFox"
+    "factorfox": "Factorfox Software LLC",
+    "hello": "Hello"
   },
   "newSchedules":{
     "newSchedules": "New Schedules",
