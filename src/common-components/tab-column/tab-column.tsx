@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 
 interface TabColumnProps {
-  tabTitles: any;
+  tabTitles: string[];
   children?: any[] | JSX.Element | JSX.Element[];
 }
 
@@ -13,7 +13,7 @@ const TabColumn = ({ tabTitles, children }: TabColumnProps) => {
   return (
     <div>
       <Nav pills>
-        {tabTitles.map((tabTitle: any, index: any) => (
+        {tabTitles.map((tabTitle, index) => (
           <NavItem key={index}>
             <NavLink
               className={activeTab == index ? "active" : ""}

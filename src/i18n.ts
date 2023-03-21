@@ -19,7 +19,7 @@ i18n
     debug: false,
     supportedLngs: ['en'],
     saveMissing: true,
-    keySeparator: '.' // we do not use keys in form messages.welcome
+    keySeparator: '.'
   })
 
 export default i18n

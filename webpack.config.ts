@@ -19,6 +19,7 @@ export default (_env: Record<string, any>, argv: any): Configuration => ({
     static: path.join(__dirname, "public"),
     server: "https",
     port: 3300,
+    historyApiFallback: true,
   },
   module: {
     unsafeCache: false,
@@ -65,6 +66,7 @@ export default (_env: Record<string, any>, argv: any): Configuration => ({
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: '/'
   },
   plugins: [
     new CleanWebpackPlugin(),

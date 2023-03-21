@@ -8,7 +8,6 @@ import {
   Row,
   UncontrolledButtonDropdown,
 } from "reactstrap";
-// import SideBar from "../../common-components/sidebar/sidebar";
 import MenuBar from "./components/menu-bar";
 import Search from "./components/search";
 import { handleLogout } from "../../components/header/components/logout/logout";
@@ -16,12 +15,10 @@ import CompanyLogo from "../../common-components/company-logo";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  // let history = useHistory();
   const { t } = useTranslation();
   return (
     <div className="header-section">
       <div className="logo-section d-flex">
-        {/* <SideBar icon={"bars"} /> */}
         <CompanyLogo height={30} shrinkOnSmallScreen />
       </div>
       <MenuBar />
@@ -37,18 +34,21 @@ const Header = () => {
               <Row>
                 <Col className="user-dropdown-greeting">
                   <i className="fa-light fa-user"></i>
-                  <div className="d-block">
-                    <div>{localStorage.getItem("user") || "user"}</div>
+                  <div className="d-block text-start">
+                    <div>
+                      {t("header.hello")},{" "}
+                      {localStorage
+                        .getItem("user")
+                        ?.replace(/@.*$/, "")
+                        .toUpperCase() || "user"}
+                    </div>
                     <div>{t("header.factorfox")}</div>
                   </div>
                 </Col>
               </Row>
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem
-                className="border-bottom"
-                // onClick={() => history.push('/user-profile')}
-              >
+              <DropdownItem className="border-bottom">
                 <div className="d-flex justify-content-between text-align-center">
                   <span className="text-dark">Profile</span>
                 </div>
@@ -66,7 +66,6 @@ const Header = () => {
           </UncontrolledButtonDropdown>
         </div>
       </div>
-      {/* <SideBar icon={"bell"} openside={"end"} /> */}
     </div>
   );
 };
