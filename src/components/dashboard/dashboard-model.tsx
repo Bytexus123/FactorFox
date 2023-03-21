@@ -46,7 +46,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
         <RowSection headerName={t("dashboard.performance")}>
           <Col xl={4} md={6}>
             <CoulmnSection>
-              <TabColumn tabTitles={["ADV", "INV"]}>
+              <TabColumn tabTitles={[t('dashboard.adv') , t('dashboard.inv') ]}>
                 <Row>
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
@@ -187,9 +187,9 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                         <tr>
                           <th className="text-left"></th>
                           <th className="text-left"></th>
-                          <th className="text-right ng-binding">Count</th>
+                          <th className="text-right ng-binding">{t("dashboard.count")}</th>
 
-                          <th className="text-right ng-binding">Advance Due</th>
+                          <th className="text-right ng-binding">{t("dashboard.advancedue")}</th>
                           <th className="text-right">%</th>
                         </tr>
                       </thead>
@@ -312,11 +312,11 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
             </CoulmnSection>
           </Col>
           <Col xl={4} md={6}>
-            <PieChart title="Aging Summary" />
+            <PieChart title={`${t('dashboard.agingSummary')}`} />
           </Col>
           <Col xl={4} md={6}>
             <CoulmnSection>
-              <TabColumn tabTitles={["Day", "Month", "YTD"]}>
+              <TabColumn tabTitles={[t('dashboard.day'), t('dashboard.month'), t('dashboard.ytd')]}>
                 <Row>
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">

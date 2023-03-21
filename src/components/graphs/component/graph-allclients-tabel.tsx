@@ -1,16 +1,18 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Table } from "reactstrap";
 import clientData from "./clientData.json";
 
 const GraphAllClientsTabel = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <Table borderless size="sm">
         <thead>
           <tr>
-            <th>Client</th>
-            <th>Percent(%)</th>
-            <th>Amount</th>
+            <th>{t("graph.allClients")}</th>
+            <th>{t("graph.percent(%)")}</th>
+            <th>{t("graph.amount")}</th>
           </tr>
           <tr>
             <th>Avg./Total</th>
