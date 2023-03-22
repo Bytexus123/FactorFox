@@ -10,11 +10,11 @@ import NaviagtionModel from "../navigation/navigation-model";
 import DashboardChart from "../graphs/graph-chart";
 import { Redirect } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import day from './day.json'
-import month from './month.json'
-import year from './year.json'
-import Adv from './Adv.json'
-import Inv from './Inv.json'
+import day from "./day.json";
+import month from "./month.json";
+import year from "./year.json";
+import Adv from "./Adv.json";
+import Inv from "./Inv.json";
 
 interface DashboardModelProps {
   isloggedIn?: boolean;
@@ -51,7 +51,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
         <RowSection headerName={t("dashboard.performance")}>
           <Col xl={4} md={6}>
             <CoulmnSection>
-              <TabColumn tabTitles={[t('dashboard.adv'), t('dashboard.inv')]}>
+              <TabColumn tabTitles={[t("dashboard.adv"), t("dashboard.inv")]}>
                 <Row>
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
@@ -74,7 +74,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                         <td className="text-left">
                           <b className="ng-binding">{t("dashboard.total")}</b>
                         </td>
-                        {Adv.map(data => (
+                        {Adv.map((data) => (
                           <>
                             <tr
                               ng-if="!showCustomfield('CapitalNow')"
@@ -86,17 +86,13 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                                   href="#"
                                   ng-click="GetDetailsOfData(item);"
                                   className="ng-binding"
-                                >{data.totalsp}</a>
+                                >
+                                  {data.totalsp}
+                                </a>
                               </td>
-                              <td className="text-right">
-                                {data.count}
-                              </td>
-                              <td className="text-right">
-                                {data.advancedue}
-                              </td>
-                              <td className="text-right">
-                                {data.percent}
-                              </td>
+                              <td className="text-right">{data.count}</td>
+                              <td className="text-right">{data.advancedue}</td>
+                              <td className="text-right">{data.percent}</td>
                             </tr>
                           </>
                         ))}
@@ -123,18 +119,22 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                         <tr>
                           <th className="text-left"></th>
                           <th className="text-left"></th>
-                          <th className="text-right ng-binding">{t("dashboard.count")}</th>
+                          <th className="text-right ng-binding">
+                            {t("dashboard.count")}
+                          </th>
 
-                          <th className="text-right ng-binding">{t("dashboard.advancedue")}</th>
+                          <th className="text-right ng-binding">
+                            {t("dashboard.advancedue")}
+                          </th>
                           <th className="text-right">%</th>
                         </tr>
                       </thead>
                       <tbody>
-                      <td></td>
+                        <td></td>
                         <td className="text-left">
                           <b className="ng-binding">{t("dashboard.total")}</b>
                         </td>
-                      {Inv.map(data => (
+                        {Inv.map((data) => (
                           <>
                             <tr
                               ng-if="!showCustomfield('CapitalNow')"
@@ -146,17 +146,13 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                                   href="#"
                                   ng-click="GetDetailsOfData(item);"
                                   className="ng-binding"
-                                >{data.totalsp}</a>
+                                >
+                                  {data.totalsp}
+                                </a>
                               </td>
-                              <td className="text-right">
-                                {data.count}
-                              </td>
-                              <td className="text-right">
-                                {data.advancedue}
-                              </td>
-                              <td className="text-right">
-                                {data.percent}
-                              </td>
+                              <td className="text-right">{data.count}</td>
+                              <td className="text-right">{data.advancedue}</td>
+                              <td className="text-right">{data.percent}</td>
                             </tr>
                           </>
                         ))}
@@ -180,16 +176,22 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
             </CoulmnSection>
           </Col>
           <Col xl={4} md={6}>
-            <PieChart title={`${t('dashboard.agingSummary')}`} />
+            <PieChart title={`${t("dashboard.agingSummary")}`} />
           </Col>
           <Col xl={4} md={6}>
             <CoulmnSection>
-              <TabColumn tabTitles={[t('dashboard.day'), t('dashboard.month'), t('dashboard.ytd')]}>
+              <TabColumn
+                tabTitles={[
+                  t("dashboard.day"),
+                  t("dashboard.month"),
+                  t("dashboard.ytd"),
+                ]}
+              >
                 <Row>
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
                       <tbody className="small">
-                        {day.map(data => (
+                        {day.map((data) => (
                           <tr>
                             <td>{data.day}</td>
                             <td>{data.value}</td>
@@ -203,7 +205,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
                       <tbody className="small">
-                        {month.map(data => (
+                        {month.map((data) => (
                           <tr>
                             <td>{data.month}</td>
                             <td>{data.value}</td>
@@ -217,7 +219,7 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
                       <tbody className="small">
-                        {year.map(data => (
+                        {year.map((data) => (
                           <tr>
                             <td>{data.year}</td>
                             <td>{data.value}</td>

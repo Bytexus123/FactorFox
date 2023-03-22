@@ -29,7 +29,7 @@ const NewSchedules = () => {
                   </tr>
                 </thead>
                 <tbody className="small">
-                  {recentEntries.map((entry) =>(
+                  {recentEntries.map((entry) => (
                     <tr>
                       <td><a href="#">{entry.schedule}</a></td>
                       <td>{entry.scheduleAmount}</td>
@@ -53,7 +53,7 @@ const NewSchedules = () => {
                   </tr>
                 </thead>
                 <tbody className="small">
-                  {data.map((data)=>(
+                  {data.map((data) => (
                     <tr>
                       <td>{data.paymentType}</td>
                       <td>{data.TotalScheduleAmount}</td>
@@ -86,7 +86,7 @@ const NewSchedules = () => {
                           </tr>
                         </thead>
                         <tbody className="small">
-                          {customer.map((data)=>(
+                          {customer.map((data) => (
                             <tr>
                               <td><a href="#">{data.Company}</a></td>
                               <td>{data.Motorcarrier}</td>
@@ -106,15 +106,20 @@ const NewSchedules = () => {
                       <Table striped responsive size="sm" className="small">
                         <thead className="small">
                           <tr>
-                            <th>Company</th>
+                            <th>{t('newSchedules.company')}</th>
+                            <th>{t('newSchedules.motorCarrier')}</th>
+                            <th>{t('newSchedules.phone#')}</th>
+                            <th>{t('newSchedules.createdBy')}</th>
+                            <th>{t('newSchedules.submittedDate')}</th>
+                            {/* <th>Company</th>
                             <th>Motor Carrier</th>
                             <th>Phone#</th>
                             <th>Created By</th>
-                            <th>Submitted Date</th>
+                            <th>Submitted Date</th> */}
                           </tr>
                         </thead>
                         <tbody className="small">
-                        {client.map((data)=>(
+                          {client.map((data) => (
                             <tr>
                               <td><a href="#">{data.Company}</a></td>
                               <td>{data.Motorcarrier}</td>
