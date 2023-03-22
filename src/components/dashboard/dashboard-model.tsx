@@ -74,11 +74,12 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                         <td className="text-left">
                           <b className="ng-binding">{t("dashboard.total")}</b>
                         </td>
-                        {Adv.map((data) => (
+                        {Adv.map((data, index) => (
                           <>
                             <tr
                               ng-if="!showCustomfield('CapitalNow')"
                               className="ng-scope"
+                              key={index}
                             >
                               <td></td>
                               <td className="text-right">
@@ -134,11 +135,12 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                         <td className="text-left">
                           <b className="ng-binding">{t("dashboard.total")}</b>
                         </td>
-                        {Inv.map((data) => (
+                        {Inv.map((data, index) => (
                           <>
                             <tr
                               ng-if="!showCustomfield('CapitalNow')"
                               className="ng-scope"
+                              key={index}
                             >
                               <td></td>
                               <td className="text-right">
@@ -191,8 +193,8 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
                       <tbody className="small">
-                        {day.map((data) => (
-                          <tr>
+                        {day.map((data, index) => (
+                          <tr key={index}>
                             <td>{data.day}</td>
                             <td>{data.value}</td>
                           </tr>
@@ -205,8 +207,8 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
                       <tbody className="small">
-                        {month.map((data) => (
-                          <tr>
+                        {month.map((data, index) => (
+                          <tr key={index}>
                             <td>{data.month}</td>
                             <td>{data.value}</td>
                           </tr>
@@ -219,8 +221,8 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
                   <Col sm="12" className="pt-3">
                     <Table striped responsive size="sm" className="small">
                       <tbody className="small">
-                        {year.map((data) => (
-                          <tr>
+                        {year.map((data, index) => (
+                          <tr key={index}>
                             <td>{data.year}</td>
                             <td>{data.value}</td>
                           </tr>
