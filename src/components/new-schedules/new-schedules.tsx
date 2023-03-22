@@ -4,6 +4,10 @@ import CoulmnSection from "../../common-components/coulmn-section";
 import RowSection from "../../common-components/row-section";
 import TabColumn from "../../common-components/tab-column";
 import { useTranslation } from "react-i18next";
+import recentEntries from './RecentEntries.json'
+import data from './ApprovedAdvance.json'
+import client from './client.json'
+import customer from './Customer.json'
 
 const NewSchedules = () => {
   const { t } = useTranslation()
@@ -17,71 +21,24 @@ const NewSchedules = () => {
                 <thead className="small">
                   <tr>
                     <th>{t('newSchedules.schedule')}</th>
-                    <th></th>
                     <th>{t('newSchedules.scheduleAmount')}</th>
                     <th>{t('newSchedules.paymentType')}</th>
                     <th>{t('newSchedules.submittedDate')}</th>
                     <th>{t('newSchedules.submittedTime')}</th>
                     <th>{t('newSchedules.createdDate')}</th>
-
                   </tr>
                 </thead>
                 <tbody className="small">
-                  <tr>
-                    <td>
-                      <a href="#">000S-5565</a>
-                    </td>
-                    <td></td>
-                    <td>10,000.00</td>
-                    <td>ACH</td>
-                    <td>NA</td>
-                    <td>NA</td>
-                    <td>01/02/23</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">0001</a>
-                    </td>
-                    <td></td>
-                    <td>3,000.00</td>
-                    <td>ACH</td>
-                    <td>NA</td>
-                    <td>NA</td>
-                    <td>01/02/23</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">000S-5564</a>
-                    </td>
-                    <td></td>
-                    <td>20,000.00</td>
-                    <td>ACH</td>
-                    <td>NA</td>
-                    <td>NA</td>
-                    <td>01/02/23</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">0004</a>
-                    </td>
-                    <td></td>
-                    <td>1500.00</td>
-                    <td>ACH</td>
-                    <td>NA</td>
-                    <td>NA</td>
-                    <td>01/02/23</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">0004</a>
-                    </td>
-                    <td></td>
-                    <td>1500.00</td>
-                    <td>ACH</td>
-                    <td>NA</td>
-                    <td>NA</td>
-                    <td>01/02/23</td>
-                  </tr>
+                  {recentEntries.map((entry) =>(
+                    <tr>
+                      <td><a href="#">{entry.schedule}</a></td>
+                      <td>{entry.scheduleAmount}</td>
+                      <td>{entry.paymentType}</td>
+                      <td>{entry.submittedDate}</td>
+                      <td>{entry.submittedTime}</td>
+                      <td>{entry.createdDate}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
             </CoulmnSection>
@@ -96,26 +53,12 @@ const NewSchedules = () => {
                   </tr>
                 </thead>
                 <tbody className="small">
-                  <tr>
-                    <td>EFT</td> 
-                    <td>5,040,942.01</td>
-                  </tr>
-                  <tr>
-                    <td>ACH</td>
-                    <td>5,212,376.05</td>
-                  </tr>
-                  <tr>
-                    <td>EFS</td>
-                    <td>79,943.30</td>
-                  </tr>
-                  <tr>
-                    <td>COMDATA</td>
-                    <td>1,550.00</td>
-                  </tr>
-                  <tr>
-                    <td>CITICC</td>
-                    <td>12,455.00</td>
-                  </tr>
+                  {data.map((data)=>(
+                    <tr>
+                      <td>{data.paymentType}</td>
+                      <td>{data.TotalScheduleAmount}</td>
+                    </tr>
+                  ))}
                 </tbody>
                 <tfoot className="small">
                   <tr>
@@ -143,51 +86,15 @@ const NewSchedules = () => {
                           </tr>
                         </thead>
                         <tbody className="small">
-                          <tr>
-                            <td>
-                              <a href="#">Aptimust Customer </a>
-                            </td>
-                            <td>19022023</td>
-                            <td>987678765</td>
-                            <td>Arlen</td>
-                            <td>30/09/22</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a href="#">Dispin Prospective Customer</a>
-                            </td>
-                            <td>545</td>
-                            <td>987678765</td>
-                            <td>Arlen</td>
-                            <td>30/09/22</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a href="#">Doms Prospective Customer</a>
-                            </td>
-                            <td>0</td>
-                            <td>987678765</td>
-                            <td>Arlen</td>
-                            <td>30/09/22</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a href="#">dsfds</a>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a href="#">Aptimust Customer</a>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
+                          {customer.map((data)=>(
+                            <tr>
+                              <td><a href="#">{data.Company}</a></td>
+                              <td>{data.Motorcarrier}</td>
+                              <td>{data.Phone}</td>
+                              <td>{data.CreatedBy}</td>
+                              <td>{data.SubmittedDate}</td>
+                            </tr>
+                          ))}
                         </tbody>
                       </Table>
                     </Col>
@@ -207,33 +114,15 @@ const NewSchedules = () => {
                           </tr>
                         </thead>
                         <tbody className="small">
-                          <tr>
-                            <td>
-                              <a href="#">Aptimust Customer </a>
-                            </td>
-                            <td>19022023</td>
-                            <td>987678765</td>
-                            <td>Arlen</td>
-                            <td>30/09/22</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a href="#">Dispin Prospective Customer</a>
-                            </td>
-                            <td>545</td>
-                            <td>987678765</td>
-                            <td>Arlen</td>
-                            <td>30/09/22</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <a href="#">Doms Prospective Customer</a>
-                            </td>
-                            <td>0</td>
-                            <td>987678765</td>
-                            <td>Arlen</td>
-                            <td>30/09/22</td>
-                          </tr>
+                        {client.map((data)=>(
+                            <tr>
+                              <td><a href="#">{data.Company}</a></td>
+                              <td>{data.Motorcarrier}</td>
+                              <td>{data.Phone}</td>
+                              <td>{data.CreatedBy}</td>
+                              <td>{data.SubmittedDate}</td>
+                            </tr>
+                          ))}
                         </tbody>
                       </Table>
                     </Col>

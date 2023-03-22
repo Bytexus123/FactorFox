@@ -1,0 +1,42 @@
+[
+    {
+        "schedule": "000S-5565",
+        "scheduleAmount": "10,000.00",
+        "paymentType":"ACH",
+        "submittedDate":"N/A",
+        "submittedTime":"N/A",
+        "createdDate":"01/02/23"
+    },
+    {
+        "schedule": "0001",
+        "scheduleAmount": "3,000.00",
+        "paymentType":"ACH",
+        "submittedDate":"N/A",
+        "submittedTime":"N/A",
+        "createdDate":"01/02/24"
+    },
+    {
+        "schedule": "000S-5564",
+        "scheduleAmount": "20,000.00",
+        "paymentType":"ACH",
+        "submittedDate":"N/A",
+        "submittedTime":"N/A",
+        "createdDate":"01/02/25"
+    },
+    {
+        "schedule": "0004",
+        "scheduleAmount": "1500.00",
+        "paymentType":"ACH",
+        "submittedDate":"N/A",
+        "submittedTime":"N/A",
+        "createdDate":"01/02/26"
+    },
+    {
+        "schedule": "0005",
+        "scheduleAmount": "15,000.00",
+        "paymentType":"ACH",
+        "submittedDate":"N/A",
+        "submittedTime":"N/A",
+        "createdDate":"01/02/27"
+    }
+]

@@ -1,0 +1,32 @@
+
+[
+    {
+        "count": "565",
+        "advancedue": "13,067,760.48",
+        "percent":""
+    },
+    {
+        "totalsp": "0-30",
+        "count": "751",
+        "advancedue": "156,886.66",
+        "percent":"1.20"
+    },
+    {
+        "totalsp": "31-60",
+        "count": "125",
+        "advancedue": "347,680.00",
+        "percent":"1.24"
+    },
+    {
+        "totalsp": "61-90",
+        "count": "39",
+        "advancedue": "24,499.00",
+        "percent":"12.7"
+    },
+    {
+        "totalsp": "90+",
+        "count": "22",
+        "advancedue": "12,538,694.82",
+        "percent":"95.95"
+    }
+]

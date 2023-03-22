@@ -1,0 +1,30 @@
+[
+    {
+        "year":"Invoice Purchased by Invoice Date",
+        "value":"€146,060.00"
+    },
+    {
+        "year":"Net Advances by Advance Date",
+        "value":"€109,201.79"
+    },
+    {
+        "year":"Advance Discounts",
+        "value":"€664.48"
+    },
+    {
+        "year":"Received Discounts",
+        "value":"€559,258.06"
+    },
+    {
+        "year":"Total Receipts",
+        "value":"€4,909,121.20"
+    },
+    {
+        "year":"Total Chargebacks",
+        "value":"€800.00"
+    },
+    {
+        "year":"Advance Chargebacks",
+        "value":"€800.00"
+    }
+]

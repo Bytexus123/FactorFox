@@ -1,0 +1,18 @@
+[
+    {
+        "labels": "0-30",
+        "Advances": "0.76"
+    },
+    {
+        "labels": "31-60",
+        "Advances": "3.25"
+    },
+    {
+        "labels": "61-90",
+        "Advances": "0.17"
+    },
+    {
+        "labels": "90+",
+        "Advances": "95.82"
+    }
+]

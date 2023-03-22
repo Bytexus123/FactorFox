@@ -1,0 +1,23 @@
+[
+    {
+        "Company": "Aptimust Customer",
+        "Motorcarrier": "19022023",
+        "Phone":"987678768",
+        "CreatedBy":"Arlen",
+        "SubmittedDate":"30/09/22"
+    },
+    {
+        "Company": "Dispin Prospective Customer",
+        "Motorcarrier": "545",
+        "Phone":"987678766",
+        "CreatedBy":"Disha",
+        "SubmittedDate":"30/09/22"
+    },
+    {
+        "Company": "Doms Prospective Customer",
+        "Motorcarrier": "0",
+        "Phone":"987678765",
+        "CreatedBy":"Hina",
+        "SubmittedDate":"30/09/22"
+    }
+]

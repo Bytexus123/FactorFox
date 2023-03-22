@@ -1,0 +1,22 @@
+[
+    {
+        "paymentType":"EFT",
+        "TotalScheduleAmount":"5,040,942.01"
+    },
+    {
+        "paymentType":"ACH",
+        "TotalScheduleAmount":"5,212,376.05"
+    },
+    {
+        "paymentType":"EFS",
+        "TotalScheduleAmount":"79,943.30"
+    },
+    {
+        "paymentType":"COMDATA",
+        "TotalScheduleAmount":"1,550.00"
+    },
+    {
+        "paymentType":"CITICC",
+        "TotalScheduleAmount":"12,455.00"
+    }
+]
