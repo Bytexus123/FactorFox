@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 .login {
-    background-image: url('../../public/images/login-bg.png');
+    background-image: url('~/public/images/login-bg.png');
     font-family: 'Titillium Web', sans-serif;
     font-weight: 400;
 
@@ -10,7 +10,6 @@
     }
 
     .input-group-text {
-        // min-width: 120px;
         color: rgb(88, 88, 88);
     }
 

@@ -3,35 +3,49 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { ForgotPassword, LoginPage } from "./components/login-page";
 import DashboardModel from "./components/dashboard";
 import Cookies from "js-cookie";
+import { LoginContext } from "./components/private-routes/context";
+import { PrivateRoute } from "./components/private-routes";
 
 const App = () => {
-  const [loggedIn, setloggedIn] = useState(
+  const [loading, setLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
     JSON.parse(Cookies.get("loggedIn") || "false")
   );
 
   const setLogin = (data: boolean) => {
     const status = data.toString();
     Cookies.set("loggedIn", status);
-    setloggedIn(data);
+    setIsLoggedIn(data);
   };
   return (
     <>
       <Suspense fallback="Loading...">
-        <Switch>
-          <Route path="/dashboard">
-            <DashboardModel loginStatus={setLogin} />
-          </Route>
-          <Route exact path="/">
-            {loggedIn ? (
-              <Redirect to="/dashboard" />
-            ) : (
-              <LoginPage loginStatus={setLogin} />
-            )}
-          </Route>
-          <Route path="/forgetpassword">
-            <ForgotPassword />
-          </Route>
-        </Switch>
+        <LoginContext.Provider
+          value={{
+            isLoggedIn,
+            setIsLoggedIn,
+            loading,
+            setLoading,
+          }}
+        >
+          <Switch>
+            <PrivateRoute
+              exact={true}
+              path="/dashboard"
+              component={DashboardModel}
+            />
+            <Route exact={true} path="/">
+              {isLoggedIn ? (
+                <Redirect to="/dashboard" />
+              ) : (
+                <LoginPage loginStatus={setLogin} />
+              )}
+            </Route>
+            <Route path="/forgetpassword">
+              <ForgotPassword />
+            </Route>
+          </Switch>
+        </LoginContext.Provider>
       </Suspense>
     </>
   );

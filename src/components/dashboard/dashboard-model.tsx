@@ -8,7 +8,6 @@ import PieChart from "../pie-chart";
 import Header from "../header";
 import NaviagtionModel from "../navigation/navigation-model";
 import DashboardChart from "../graphs/graph-chart";
-import { Redirect } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import day from "./day.json";
 import month from "./month.json";
@@ -17,11 +16,10 @@ import Adv from "./Adv.json";
 import Inv from "./Inv.json";
 
 interface DashboardModelProps {
-  isloggedIn?: boolean;
   loginStatus: (data: any) => void;
 }
 
-const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
+const DashboardModel = ({ }: DashboardModelProps) => {
   const { t } = useTranslation();
   const setCardHeight = () => {
     const rs = document.querySelectorAll<HTMLElement>(".section");
@@ -40,7 +38,6 @@ const DashboardModel = ({ isloggedIn }: DashboardModelProps) => {
   useEffect(() => {
     document.title = "FF Dashboard";
     setCardHeight();
-    !isloggedIn && <Redirect to="/" />;
   }, []);
 
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link, useHistory } from "react-router-dom";
 import {
   Col,
   DropdownItem,
@@ -10,7 +9,7 @@ import {
 } from "reactstrap";
 import MenuBar from "./components/menu-bar";
 import Search from "./components/search";
-import { handleLogout } from "../../components/header/components/logout/logout";
+import { handleLogout } from '../../packages/auth'
 import CompanyLogo from "../../common-components/company-logo";
 import { useTranslation } from "react-i18next";
 
