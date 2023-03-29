@@ -11,7 +11,7 @@ import {
 
 interface CoulmnSectionProps {
   children?: any[] | JSX.Element | JSX.Element[];
-  title?: string;
+  title?: string | undefined;
 }
 
 const CoulmnSection = ({ children, title }: CoulmnSectionProps) => {
