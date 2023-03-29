@@ -13,7 +13,7 @@ export const LoginApi = async (auth: any) => {
     .then(async (result) => {
       let status = result.status;
       let token = await result.text();
-      return { status , token};
+      return { status, token };
     })
     .catch((err) => {
       console.log("error retrieving data", err);
