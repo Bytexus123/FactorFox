@@ -16,7 +16,7 @@ import {
 import CompanyLogo from "../../common-components/company-logo";
 import { validation } from "../validation/validation";
 import { LoginApi } from "../../packages/factorfox-api/login-api";
-import { AccessToken, runLogoutTimer } from "../../packages/auth";
+import { AccessToken } from "../../packages/auth";
 
 interface LoginPageProps {
   loginStatus: (data: any) => void;
@@ -59,7 +59,7 @@ const LoginPage = ({ loginStatus }: LoginPageProps) => {
           loginStatus(true);
           localStorage.setItem("user", state.formdata.email);
           AccessToken(res.token);
-          runLogoutTimer(dispatch, res.status * 1000);
+         
         } else {
           dispatch({
             type: "setErrorData",
