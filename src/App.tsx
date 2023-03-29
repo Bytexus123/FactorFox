@@ -5,6 +5,8 @@ import DashboardModel from "./components/dashboard";
 import Cookies from "js-cookie";
 import { LoginContext } from "./components/private-routes/context";
 import { PrivateRoute } from "./components/private-routes";
+import { IdleTimerProvider } from "react-idle-timer";
+import { handleLogout, session_Time_Logout } from "./packages/auth";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -17,6 +19,7 @@ const App = () => {
     Cookies.set("loggedIn", status);
     setIsLoggedIn(data);
   };
+ 
   return (
     <>
       <Suspense fallback="Loading...">
@@ -29,21 +32,26 @@ const App = () => {
           }}
         >
           <Switch>
-            <PrivateRoute
-              exact={true}
-              path="/dashboard"
-              component={DashboardModel}
-            />
-            <Route exact={true} path="/">
-              {isLoggedIn ? (
-                <Redirect to="/dashboard" />
-              ) : (
-                <LoginPage loginStatus={setLogin} />
-              )}
-            </Route>
-            <Route path="/forgetpassword">
-              <ForgotPassword />
-            </Route>
+            <IdleTimerProvider
+              timeout={session_Time_Logout}
+              onIdle={handleLogout}
+            >
+              <PrivateRoute
+                exact={true}
+                path="/dashboard"
+                component={DashboardModel}
+              />
+              <Route exact={true} path="/">
+                {isLoggedIn ? (
+                  <Redirect to="/dashboard" />
+                ) : (
+                  <LoginPage loginStatus={setLogin} />
+                )}
+              </Route>
+              <Route path="/forgetpassword">
+                <ForgotPassword />
+              </Route>
+            </IdleTimerProvider>
           </Switch>
         </LoginContext.Provider>
       </Suspense>
