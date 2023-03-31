@@ -19,7 +19,7 @@ const App = () => {
     Cookies.set("loggedIn", status);
     setIsLoggedIn(data);
   };
- 
+
   return (
     <>
       <Suspense fallback="Loading...">

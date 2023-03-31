@@ -1,1 +1,1 @@
-export type Direction = 'start' | 'end' | 'bottom' | 'top';
+export type Direction = "start" | "end" | "bottom" | "top";

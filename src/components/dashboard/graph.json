@@ -1,18 +1,18 @@
 [
     {
-        "labels": "0-30",
-        "Advances": "0.76"
+        "Text": "0-30",
+        "Percentage": "70.14"
     },
     {
-        "labels": "31-60",
-        "Advances": "3.25"
+        "Text": "31-60",
+        "Percentage": "18.94"
     },
     {
-        "labels": "61-90",
-        "Advances": "0.17"
+        "Text": "61-90",
+        "Percentage": "37.90"
     },
     {
-        "labels": "90+",
-        "Advances": "95.82"
+        "Text": "90+",
+        "Percentage": "40.56"
     }
 ]

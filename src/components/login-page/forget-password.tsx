@@ -26,7 +26,10 @@ const ForgotPassword = ({}: ForgotPasswordProps) => {
 
   return (
     <>
-      <div className="login">
+      <div
+        className="login"
+        style={{ backgroundImage: "url('images/login-bg.png')" }}
+      >
         <Container>
           <Row>
             <Col

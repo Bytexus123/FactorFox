@@ -17,18 +17,20 @@
 table {
   &.table-sm {
     font-size: 0.875em;
+
     tbody,
     tfoot,
     thead {
       font-size: 1em;
     }
   }
+
   a {
     text-decoration: none;
   }
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) > * {
+.table-striped>tbody>tr:nth-of-type(odd)>* {
   --bs-table-accent-bg: #0dcaf008;
 }
 
@@ -53,6 +55,7 @@ table {
 }
 
 @media (min-width: 1200px) {
+
   .col-lg-4:not(:first-child):not(:last-child),
   .col-xl-4:not(:first-child):not(:last-child) {
     padding-left: 0;
@@ -95,7 +98,7 @@ table {
   border-radius: 0 !important;
 }
 
-.row > * {
+.row>* {
   padding-bottom: 0.5rem;
 }
 
@@ -120,12 +123,10 @@ table {
 }
 
 .bg-ultimate {
-  background-image: linear-gradient(
-    299deg,
-    #9acdff 0%,
-    #c4f5fa 99%,
-    #c4e2fa 100%
-  ) !important;
+  background-image: linear-gradient(299deg,
+      #9acdff 0%,
+      #c4f5fa 99%,
+      #c4e2fa 100%) !important;
 }
 
 .bg-primary {
@@ -137,11 +138,11 @@ table {
   padding-right: 1rem !important;
 }
 
-.btn-check:checked + .btn,
+.btn-check:checked+.btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
-:not(.btn-check) + .btn:active {
+:not(.btn-check)+.btn:active {
   color: var(--bs-btn-active-color);
   background-color: transparent;
   border-color: transparent;

@@ -1,9 +1,7 @@
 import React from "react";
-// import { useMediaQuery } from "react-responsive";
 import { Nav, NavItem, NavLink } from "reactstrap";
 
 const NaviagtionModel = () => {
-  // const media768 = useMediaQuery({ query: "(min-width: 768px)" });
   const navitems = ["Reports"];
 
   return (

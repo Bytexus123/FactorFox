@@ -1,13 +1,13 @@
-import i18n from 'i18next'
-import LngDetector from 'i18next-browser-languagedetector'
-import Backend from 'i18next-http-backend'
-import { initReactI18next } from 'react-i18next'
+import i18n from "i18next";
+import LngDetector from "i18next-browser-languagedetector";
+import Backend from "i18next-http-backend";
+import { initReactI18next } from "react-i18next";
 
 const options = {
-  order: ['navigator'],
-  lookupQuerystring: 'lng',
-  lookupLocalStorage: 'i18nextLng'
-}
+  order: ["navigator"],
+  lookupQuerystring: "lng",
+  lookupLocalStorage: "i18nextLng",
+};
 
 i18n
   .use(Backend)
@@ -15,11 +15,11 @@ i18n
   .use(initReactI18next)
   .init({
     detection: options,
-    fallbackLng: 'en',
+    fallbackLng: "en",
     debug: false,
-    supportedLngs: ['en'],
+    supportedLngs: ["en"],
     saveMissing: true,
-    keySeparator: '.'
-  })
+    keySeparator: ".",
+  });
 
-export default i18n
+export default i18n;

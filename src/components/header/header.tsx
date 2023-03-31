@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import MenuBar from "./components/menu-bar";
 import Search from "./components/search";
-import { handleLogout } from '../../packages/auth'
+import { handleLogout } from "../../packages/auth";
 import CompanyLogo from "../../common-components/company-logo";
 import { useTranslation } from "react-i18next";
 

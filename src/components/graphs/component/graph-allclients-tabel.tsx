@@ -15,7 +15,7 @@ const GraphAllClientsTabel = () => {
             <th>{t("graph.amount")}</th>
           </tr>
           <tr>
-            <th>{t('graph.avg./Total')}</th>
+            <th>{t("graph.avg./Total")}</th>
             <th>1.75</th>
             <th>16,976,384,452.19</th>
           </tr>

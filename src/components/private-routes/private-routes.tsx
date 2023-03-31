@@ -13,7 +13,7 @@ interface IProps {
 export default function PrivateRoute({
   exact = false,
   path,
-  component
+  component,
 }: IProps) {
   const { isLoggedIn } = React.useContext(LoginContext);
 
@@ -29,7 +29,7 @@ export default function PrivateRoute({
             <Redirect
               to={{
                 pathname: "/",
-                state: { from: props.location }
+                state: { from: props.location },
               }}
             />
           );

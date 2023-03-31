@@ -9,7 +9,6 @@ import {
   Input,
   InputGroup,
   InputGroupText,
-  Label,
   Row,
   Spinner,
 } from "reactstrap";
@@ -76,7 +75,10 @@ const LoginPage = ({ loginStatus }: LoginPageProps) => {
   };
   return (
     <>
-      <div className="login" style={{backgroundImage:"url('images/login-bg.png')"}}>
+      <div
+        className="login"
+        style={{ backgroundImage: "url('images/login-bg.png')" }}
+      >
         <Container>
           <Row>
             <Col
@@ -104,12 +106,8 @@ const LoginPage = ({ loginStatus }: LoginPageProps) => {
                     </div>
                     <Form className="mt-5" onSubmit={handleLogin}>
                       <FormGroup>
-                        <Label for="email" className="d-block d-sm-none">
-                          Username
-                        </Label>
                         <InputGroup>
-                          <InputGroupText className="d-none d-sm-inline">
-                            <i className="bi bi-person-fill pe-2 "></i>
+                          <InputGroupText className="d-block d-sm-inline fw-bold">
                             Username
                           </InputGroupText>
                           <Input
@@ -135,12 +133,8 @@ const LoginPage = ({ loginStatus }: LoginPageProps) => {
                         )}
                       </FormGroup>
                       <FormGroup>
-                        <Label for="password" className="d-block d-sm-none">
-                          Password
-                        </Label>
                         <InputGroup>
-                          <InputGroupText className="d-none d-sm-inline">
-                            <i className="bi bi-key-fill pe-2 "></i>
+                          <InputGroupText className="d-block d-sm-inline fw-bold">
                             Password&nbsp;
                           </InputGroupText>
                           <Input

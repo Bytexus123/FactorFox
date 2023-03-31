@@ -19,7 +19,7 @@ interface DashboardModelProps {
   loginStatus: (data: any) => void;
 }
 
-const DashboardModel = ({ }: DashboardModelProps) => {
+const DashboardModel = ({}: DashboardModelProps) => {
   const { t } = useTranslation();
   const setCardHeight = () => {
     const rs = document.querySelectorAll<HTMLElement>(".section");

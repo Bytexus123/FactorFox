@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
 .login {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: "Titillium Web", sans-serif;
     font-weight: 400;
 
     .vh-100 {
@@ -19,7 +19,7 @@
         z-index: 1;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -30,13 +30,14 @@
             z-index: -1;
         }
     }
+
     // placeholder css
     .form-control::placeholder {
         color: rgb(183, 183, 183);
         font-weight: lighter;
     }
 
-    .error{
+    .error {
         color: red;
     }
 }
