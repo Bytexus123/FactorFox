@@ -71,7 +71,7 @@ const AllCustomerChart = ({ title }: AllCustomerChartProps) => {
                 },
               ],
             }}
-            options={{ responsive: true }}
+            options={{ responsive: true, layout: { padding: 10 } }}
             style={{ maxHeight: "360px" }}
           />
           <GraphAllCustomerTabel />

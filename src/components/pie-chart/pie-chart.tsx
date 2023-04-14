@@ -50,7 +50,7 @@ const PieChart = ({ title }: PieChartProps) => {
               },
             ],
           }}
-          options={{ responsive: true }}
+          options={{ responsive: true, layout: { padding: 10 } }}
           style={{ maxHeight: "360px" }}
         />
       </CardBody>

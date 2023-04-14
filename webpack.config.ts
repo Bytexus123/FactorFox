@@ -19,7 +19,7 @@ export default (_env: Record<string, any>, argv: any): Configuration => ({
     compress: true,
     static: path.join(__dirname, "public"),
     server: "https",
-    port: 3300,
+    port: 3301,
     historyApiFallback: true,
   },
   module: {
